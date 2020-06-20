@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  ErrorTypes.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 19/06/2020.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum Result<Value> {
-    case successful(Value)
-    case failure(Error)
+public enum NewsError: Error {
+    case networking(_: String)
+    case forbidden
+    case server(error: Error)
+    case unknownError
 }
-
-public typealias Response<Value> = (Result<Value>) -> ()

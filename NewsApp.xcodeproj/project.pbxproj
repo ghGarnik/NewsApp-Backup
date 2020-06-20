@@ -26,6 +26,7 @@
 		3EB9EDFF249D3722008CB9FB /* HTTPEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EDFE249D3722008CB9FB /* HTTPEncoding.swift */; };
 		3EB9EE01249D3899008CB9FB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EE00249D3899008CB9FB /* Result.swift */; };
 		3EB9EE03249D38D0008CB9FB /* ErrorTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EE02249D38D0008CB9FB /* ErrorTypes.swift */; };
+		3EF2C35E249E7D6C000E6635 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2C35D249E7D6C000E6635 /* HTTPStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		3EB9EDFE249D3722008CB9FB /* HTTPEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPEncoding.swift; sourceTree = "<group>"; };
 		3EB9EE00249D3899008CB9FB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		3EB9EE02249D38D0008CB9FB /* ErrorTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTypes.swift; sourceTree = "<group>"; };
+		3EF2C35D249E7D6C000E6635 /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,26 +87,24 @@
 		3E209FD1249E13A600C3FFAF /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				3E209FCD249E136A00C3FFAF /* LoginRequest.swift */,
-				3E209FCF249E13A200C3FFAF /* LoginResponse.swift */,
-				3E209FCB249D4CF000C3FFAF /* LoginClient.swift */,
+				3EF2C360249E805D000E6635 /* Networking */,
 				3E209FD3249E18FC00C3FFAF /* Login.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
 		};
-		3E209FD2249E186100C3FFAF /* HTTPManager */ = {
+		3E209FD2249E186100C3FFAF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				3EF2C35F249E8030000E6635 /* Constants */,
 				3EB9EDFA249D363A008CB9FB /* APIRequest.swift */,
-				3EB9EDFC249D36AC008CB9FB /* HTTPMethods.swift */,
 				3EB9EDFE249D3722008CB9FB /* HTTPEncoding.swift */,
 				3EB9EE00249D3899008CB9FB /* Result.swift */,
 				3EB9EE02249D38D0008CB9FB /* ErrorTypes.swift */,
 				3E209FC9249D4BF900C3FFAF /* HTTPClient.swift */,
 				3E331659249E1EDD00EE3F61 /* Endpoints.swift */,
 			);
-			path = HTTPManager;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		3EB9EDC6249D3281008CB9FB = {
@@ -128,7 +128,8 @@
 		3EB9EDD1249D3281008CB9FB /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
-				3EB9EDF7249D32A5008CB9FB /* Networking */,
+				3EF2C361249E81CC000E6635 /* Commons */,
+				3E209FD1249E13A600C3FFAF /* Login */,
 				3EB9EDD2249D3281008CB9FB /* AppDelegate.swift */,
 				3EB9EDD4249D3281008CB9FB /* SceneDelegate.swift */,
 				3EB9EDD6249D3281008CB9FB /* ViewController.swift */,
@@ -150,13 +151,31 @@
 			path = NewsAppTests;
 			sourceTree = "<group>";
 		};
-		3EB9EDF7249D32A5008CB9FB /* Networking */ = {
+		3EF2C35F249E8030000E6635 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				3E209FD2249E186100C3FFAF /* HTTPManager */,
-				3E209FD1249E13A600C3FFAF /* Login */,
+				3EB9EDFC249D36AC008CB9FB /* HTTPMethods.swift */,
+				3EF2C35D249E7D6C000E6635 /* HTTPStatus.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		3EF2C360249E805D000E6635 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				3E209FCD249E136A00C3FFAF /* LoginRequest.swift */,
+				3E209FCF249E13A200C3FFAF /* LoginResponse.swift */,
+				3E209FCB249D4CF000C3FFAF /* LoginClient.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		3EF2C361249E81CC000E6635 /* Commons */ = {
+			isa = PBXGroup;
+			children = (
+				3E209FD2249E186100C3FFAF /* Networking */,
+			);
+			path = Commons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +283,7 @@
 				3EB9EE03249D38D0008CB9FB /* ErrorTypes.swift in Sources */,
 				3EB9EDD7249D3281008CB9FB /* ViewController.swift in Sources */,
 				3E209FCE249E136A00C3FFAF /* LoginRequest.swift in Sources */,
+				3EF2C35E249E7D6C000E6635 /* HTTPStatus.swift in Sources */,
 				3E33165A249E1EDD00EE3F61 /* Endpoints.swift in Sources */,
 				3EB9EDFD249D36AC008CB9FB /* HTTPMethods.swift in Sources */,
 				3EB9EDD3249D3281008CB9FB /* AppDelegate.swift in Sources */,

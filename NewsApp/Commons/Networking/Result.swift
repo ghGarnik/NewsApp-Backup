@@ -1,5 +1,5 @@
 //
-//  ErrorTypes.swift
+//  Result.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 19/06/2020.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-public enum ApiError: Error {
-    case server(message: String)
-    case errorMessage(String)
-    case unknownError
+public enum Result<Value> {
+    case successful(Value)
+    case failure(NewsError)
 }
+
+public typealias Response<Value> = (Result<Value>) -> ()
