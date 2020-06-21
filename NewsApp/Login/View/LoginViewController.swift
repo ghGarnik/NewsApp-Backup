@@ -17,13 +17,9 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var headerImage: UIImageView!
     
-    //MARK: - Constants
+    //MARK: - Binding
     
-    enum Copies: String {
-        case user = "your username"
-        case password = "type here your password"
-        case login = "Login >"
-    }
+    var viewModel: LoginViewModelProtocol?
     
     //MARK: - ViewController Lifecycle
     
@@ -42,9 +38,9 @@ class LoginViewController: UIViewController {
     //MARK: - View configuration
     
     private func configureCaptions() {
-        userTextField.placeholder = Copies.user.rawValue
-        passwordTextField.placeholder = Copies.password.rawValue
-        loginButton.setTitle(Copies.login.rawValue, for: .normal)
+        userTextField.placeholder = Copies.user
+        passwordTextField.placeholder = Copies.password
+        loginButton.setTitle(Copies.login, for: .normal)
     }
     
     private func configureTextfields() {
@@ -62,8 +58,6 @@ class LoginViewController: UIViewController {
     @IBAction func login(_ sender: Any) {
         let username = userTextField.text ?? ""
         let password = passwordTextField.text ?? ""
-        let login = Login(username: username, password: password)
-        let loginClient = LoginClient()
-        loginClient.login(login)
+        viewModel?.didTapOnLogin(username: username, password: password)
     }
 }

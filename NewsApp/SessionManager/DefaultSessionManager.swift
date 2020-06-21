@@ -1,5 +1,5 @@
 //
-//  LoginViewModelProtocol.swift
+//  DefaultSessionManager.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 21/06/2020.
@@ -8,6 +8,11 @@
 
 import Foundation
 
-protocol LoginViewModelProtocol {
-    func didTapOnLogin(username: String, password: String)
+public final class DefaultSessionManager {
+    
 }
+
+extension DefaultSessionManager: SessionManagerProtocol {
+    
+}
+

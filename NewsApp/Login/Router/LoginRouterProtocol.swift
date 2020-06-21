@@ -9,5 +9,5 @@
 import Foundation
 
 protocol LoginRouterProtocol {
-    
+    func loginDidSucceed()
 }

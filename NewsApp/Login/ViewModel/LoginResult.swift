@@ -1,5 +1,5 @@
 //
-//  LoginViewModelProtocol.swift
+//  LoginResult.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 21/06/2020.
@@ -8,6 +8,9 @@
 
 import Foundation
 
-protocol LoginViewModelProtocol {
-    func didTapOnLogin(username: String, password: String)
-}
+enum LoginResult {
+        case successful
+        case failure(NewsError)
+    }
+
+typealias LoginClientResponse = (LoginResult) -> ()

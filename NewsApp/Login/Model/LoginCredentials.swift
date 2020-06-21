@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Login {
+struct LoginCredentials {
     let username: String
     let password: String
     let grantType: GrantType = .password

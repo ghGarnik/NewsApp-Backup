@@ -1,5 +1,5 @@
 //
-//  LoginViewModelProtocol.swift
+//  Copies.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 21/06/2020.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-protocol LoginViewModelProtocol {
-    func didTapOnLogin(username: String, password: String)
+enum Copies {
+    static let user = "your username"
+    static let password = "type here your password"
+    static let login = "Login >"
 }

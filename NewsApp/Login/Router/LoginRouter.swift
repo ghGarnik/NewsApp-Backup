@@ -17,7 +17,11 @@ final public class LoginRouter: Storyboarded {
     
     public static func assembleModule() -> UIViewController {
         let viewController: LoginViewController = viewControllerFromStoryboard()
-        
+        let router = LoginRouter(withView: viewController)
+        let dependencies = LoginViewModelDependencies()
+        let viewModel = LoginViewModel(dependencies: dependencies,
+                                       router: router)
+        viewController.viewModel = viewModel
         return viewController
     }
     
@@ -27,5 +31,9 @@ final public class LoginRouter: Storyboarded {
 }
 
 extension LoginRouter: LoginRouterProtocol {
+    func loginDidSucceed() {
+        
+    }
+    
     
 }

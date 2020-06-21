@@ -9,11 +9,11 @@
 import Foundation
 
 protocol LoginViewModelDependenciesProtocol {
-    
+    var loginClient: LoginClient { get }
 }
 
 final class LoginViewModelDependencies: LoginViewModelDependenciesProtocol {
-    
+    lazy var loginClient: LoginClient = DefaultLoginClient(dependencies: LoginClientDependencies())
 }
 
 final class LoginViewModel {
@@ -24,5 +24,19 @@ final class LoginViewModel {
          router: LoginRouterProtocol) {
         self.dependencies = dependencies
         self.router = router
+    }
+}
+
+extension LoginViewModel: LoginViewModelProtocol {
+    func didTapOnLogin(username: String, password: String) {
+        let credentials = LoginCredentials(username: username, password: password)
+        dependencies.loginClient.login(credentials, completion: { result in
+            switch result {
+            case .successful:
+                self.router.loginDidSucceed()
+            case .failure(let error):
+                print("login error: \(error)")
+            }
+            })
     }
 }
