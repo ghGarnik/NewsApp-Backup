@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--LoginViewController-->
+        <scene sceneID="2X5-VI-o8m">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" title="LoginViewController" id="yv3-JE-m3q" customClass="LoginViewController" customModule="NewsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="m4s-Ok-XsJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Rtj-8U-SOk">
+                                <rect key="frame" x="64" y="406" width="286" height="84"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Llw-d9-fBa">
+                                        <rect key="frame" x="0.0" y="0.0" width="286" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kaC-zI-Vt4">
+                                        <rect key="frame" x="0.0" y="50" width="286" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5S3-tH-m3k">
+                                <rect key="frame" x="0.0" y="44" width="414" height="161.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5S3-tH-m3k" secondAttribute="height" multiplier="1920:750" id="3MD-Yc-1A6"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F24-n7-j11">
+                                <rect key="frame" x="184" y="522" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="login:" destination="yv3-JE-m3q" eventType="touchUpInside" id="wEC-K3-ySN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Rtj-8U-SOk" firstAttribute="centerY" secondItem="m4s-Ok-XsJ" secondAttribute="centerY" id="2h2-Xl-t4F"/>
+                            <constraint firstItem="F24-n7-j11" firstAttribute="centerX" secondItem="m4s-Ok-XsJ" secondAttribute="centerX" id="2wP-JG-5o8"/>
+                            <constraint firstItem="5S3-tH-m3k" firstAttribute="top" secondItem="Hrk-Og-O5r" secondAttribute="top" id="7da-on-LVK"/>
+                            <constraint firstItem="Rtj-8U-SOk" firstAttribute="leading" secondItem="Hrk-Og-O5r" secondAttribute="leading" constant="64" id="G1m-mm-idY"/>
+                            <constraint firstItem="Hrk-Og-O5r" firstAttribute="trailing" secondItem="5S3-tH-m3k" secondAttribute="trailing" id="anv-TM-wG3"/>
+                            <constraint firstItem="5S3-tH-m3k" firstAttribute="leading" secondItem="Hrk-Og-O5r" secondAttribute="leading" id="oes-QP-haW"/>
+                            <constraint firstItem="F24-n7-j11" firstAttribute="top" secondItem="Rtj-8U-SOk" secondAttribute="bottom" constant="32" id="sa6-l6-Vse"/>
+                            <constraint firstItem="Hrk-Og-O5r" firstAttribute="trailing" secondItem="Rtj-8U-SOk" secondAttribute="trailing" constant="64" id="xAz-Wg-BbF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hrk-Og-O5r"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerImage" destination="5S3-tH-m3k" id="UaO-ko-BAI"/>
+                        <outlet property="loginButton" destination="F24-n7-j11" id="bIx-vL-6MI"/>
+                        <outlet property="passwordTextField" destination="kaC-zI-Vt4" id="mFL-nR-PLE"/>
+                        <outlet property="userTextField" destination="Llw-d9-fBa" id="rb5-Tx-dzw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lX1-PP-V2l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362.31884057971018" y="-131.25"/>
+        </scene>
+    </scenes>
+</document>

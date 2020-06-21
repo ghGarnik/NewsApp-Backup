@@ -18,6 +18,7 @@ public enum Endpoints {
             return "/auth/token"
         }
     }
+    //MARK: - Full path Generation
     
     var url: String {
         return baseURL.appending(self.path)

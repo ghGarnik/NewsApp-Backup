@@ -1,20 +1,16 @@
 //
-//  HTTPClient.swift
+//  DefaultHTTPClient.swift
 //  NewsApp
 //
-//  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 19/06/2020.
+//  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 21/06/2020.
 //  Copyright © 2020 HARUTYUNYAN LAPUSHNYAN Garnik. All rights reserved.
 //
 
 import Foundation
 
-protocol HTTPClient: class {
-    func execute<T: APIRequest>(_ request: T,
-                                parameters: Parameters,
-                                completion: @escaping Response<T.Response>)
-}
-
-final class DefaultHTTPClient: HTTPClient {
+public final class DefaultHTTPClient: HTTPClient {
+    
+    //MARK: - Initial setup
     
     private enum Constants {
         static let defaultHeaders: Headers = ["accept": "application/json",
@@ -32,6 +28,8 @@ final class DefaultHTTPClient: HTTPClient {
     init() {
         session = URLSession.shared
     }
+    
+    //MARK: -  Execute Request
     
     func execute<T: APIRequest>(_ request: T,
                                 parameters: Parameters = nil,
@@ -66,7 +64,7 @@ final class DefaultHTTPClient: HTTPClient {
     }
     
     private func configureUrlRequest<T: APIRequest>(_ request: T,
-                                             parameters: Parameters?) -> URLRequest? {
+                                                    parameters: Parameters?) -> URLRequest? {
         guard let url = URL(string: request.path) else { return nil }
         
         var urlRequest = URLRequest(url: url)
