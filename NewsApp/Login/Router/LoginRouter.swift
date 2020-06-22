@@ -35,5 +35,7 @@ extension LoginRouter: LoginRouterProtocol {
         
     }
     
-    
+    func loginDidFail(message: String) {
+        view.alert(message)
+    }
 }

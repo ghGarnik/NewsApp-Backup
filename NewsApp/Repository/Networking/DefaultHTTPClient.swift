@@ -31,21 +31,37 @@ public final class DefaultHTTPClient: HTTPClient {
     
     //MARK: -  Execute Request
     
+    
+    /// Makes a HTTP Request.
+    /// - Parameter request: Request to make
+    /// - Parameter parameters: Parameters to include in the body.
+    /// - Parameter completion: Closure to execute.
     func execute<T: APIRequest>(_ request: T,
                                 parameters: Parameters = nil,
                                 completion: @escaping Response<T.Response>) {
+        
+        //Cancels previous request if exists. Just to avoid side effects.
         activeRequest?.cancel()
+        
         guard let urlRequest = configureUrlRequest(request, parameters: parameters) else {
             completion(.failure(.networking(ErrorCaptions.invalidRequest.rawValue)))
             return
         }
         
         let task = session.dataTask(with: urlRequest, completionHandler: { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(.unknownError))
+                return
+            }
+            
+            if let statusError = self.statusErrorType(httpResponse.statusCode) {
+                completion(.failure(statusError))
+                return
+            }
+            
             guard let data = data else {
-                if let error = error,
-                    let httpResponse = response as? HTTPURLResponse {
-                    let errorToForward = self.errorType(for: error, statusCode: httpResponse.statusCode)
-                    completion(.failure(errorToForward))
+                if let _ = error {
+                    completion(.failure(.server))
                 } else {
                     completion(.failure(.unknownError))
                 }
@@ -63,6 +79,11 @@ public final class DefaultHTTPClient: HTTPClient {
         activeRequest = task
     }
     
+    //MARK: - Private methods.
+    
+    /// Returns a URLRequest based on request parameters.
+    /// - Parameter request: APIRequest object.
+    /// - Parameter parameters: Parameters to include in HTTPBody.
     private func configureUrlRequest<T: APIRequest>(_ request: T,
                                                     parameters: Parameters?) -> URLRequest? {
         guard let url = URL(string: request.path) else { return nil }
@@ -79,16 +100,18 @@ public final class DefaultHTTPClient: HTTPClient {
         return urlRequest
     }
     
-    private func errorType(for error: Error, statusCode: Int) -> NewsError {
+    
+    /// Returns an error if the response status code contains any error code.
+    /// - Parameter statusCode: A HTTP response status code.
+    private func statusErrorType(_ statusCode: Int) -> NetworkingError? {
         if HTTPStatus.forbidden.contains(statusCode) {
             return .forbidden
         }
         
         if HTTPStatus.serverError.contains(statusCode) {
-            return .server(error: error)
+            return .server
         }
         
-        return .unknownError
+        return nil
     }
-    
 }

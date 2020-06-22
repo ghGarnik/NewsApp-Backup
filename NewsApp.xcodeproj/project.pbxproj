@@ -13,11 +13,15 @@
 		3E209FD0249E13A200C3FFAF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E209FCF249E13A200C3FFAF /* LoginResponse.swift */; };
 		3E209FD4249E18FC00C3FFAF /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E209FD3249E18FC00C3FFAF /* LoginCredentials.swift */; };
 		3E33165A249E1EDD00EE3F61 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E331659249E1EDD00EE3F61 /* Endpoints.swift */; };
+		3E484C4F24A0C5BF0082B14C /* Requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E484C4E24A0C5BF0082B14C /* Requests.swift */; };
+		3E484C5124A0F70B0082B14C /* CurrentFirstResponser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E484C5024A0F70B0082B14C /* CurrentFirstResponser.swift */; };
+		3E484C5324A0FD320082B14C /* AlertShowing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E484C5224A0FD320082B14C /* AlertShowing.swift */; };
+		3E484C5624A0FD8E0082B14C /* CommonCopies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E484C5524A0FD8E0082B14C /* CommonCopies.swift */; };
 		3E4CDE08249F661F0090B41C /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE07249F661F0090B41C /* LoginRouter.swift */; };
 		3E4CDE0A249F6D100090B41C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE09249F6D100090B41C /* LoginViewModel.swift */; };
 		3E4CDE0C249F6DA60090B41C /* LoginRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE0B249F6DA60090B41C /* LoginRouterProtocol.swift */; };
 		3E4CDE0E249F6E430090B41C /* LoginViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE0D249F6E430090B41C /* LoginViewModelProtocol.swift */; };
-		3E4CDE11249F75420090B41C /* Copies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE10249F75420090B41C /* Copies.swift */; };
+		3E4CDE11249F75420090B41C /* LoginCopies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE10249F75420090B41C /* LoginCopies.swift */; };
 		3E4CDE14249F7CCB0090B41C /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE13249F7CCB0090B41C /* SessionManager.swift */; };
 		3E4CDE16249F7CE50090B41C /* DefaultSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE15249F7CE50090B41C /* DefaultSessionManager.swift */; };
 		3E4CDE18249F81130090B41C /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE17249F81130090B41C /* LoginResult.swift */; };
@@ -28,7 +32,6 @@
 		3E8A3E33249F53350001D366 /* DefaultHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8A3E32249F53350001D366 /* DefaultHTTPClient.swift */; };
 		3EB9EDD3249D3281008CB9FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EDD2249D3281008CB9FB /* AppDelegate.swift */; };
 		3EB9EDD5249D3281008CB9FB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EDD4249D3281008CB9FB /* SceneDelegate.swift */; };
-		3EB9EDDD249D3281008CB9FB /* NewsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EDDB249D3281008CB9FB /* NewsApp.xcdatamodeld */; };
 		3EB9EDDF249D3282008CB9FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3EB9EDDE249D3282008CB9FB /* Assets.xcassets */; };
 		3EB9EDE2249D3282008CB9FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3EB9EDE0249D3282008CB9FB /* LaunchScreen.storyboard */; };
 		3EB9EDED249D3283008CB9FB /* NewsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9EDEC249D3283008CB9FB /* NewsAppTests.swift */; };
@@ -57,11 +60,15 @@
 		3E209FCF249E13A200C3FFAF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		3E209FD3249E18FC00C3FFAF /* LoginCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
 		3E331659249E1EDD00EE3F61 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		3E484C4E24A0C5BF0082B14C /* Requests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requests.swift; sourceTree = "<group>"; };
+		3E484C5024A0F70B0082B14C /* CurrentFirstResponser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentFirstResponser.swift; sourceTree = "<group>"; };
+		3E484C5224A0FD320082B14C /* AlertShowing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowing.swift; sourceTree = "<group>"; };
+		3E484C5524A0FD8E0082B14C /* CommonCopies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonCopies.swift; sourceTree = "<group>"; };
 		3E4CDE07249F661F0090B41C /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		3E4CDE09249F6D100090B41C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		3E4CDE0B249F6DA60090B41C /* LoginRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouterProtocol.swift; sourceTree = "<group>"; };
 		3E4CDE0D249F6E430090B41C /* LoginViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelProtocol.swift; sourceTree = "<group>"; };
-		3E4CDE10249F75420090B41C /* Copies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copies.swift; sourceTree = "<group>"; };
+		3E4CDE10249F75420090B41C /* LoginCopies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCopies.swift; sourceTree = "<group>"; };
 		3E4CDE13249F7CCB0090B41C /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		3E4CDE15249F7CE50090B41C /* DefaultSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultSessionManager.swift; sourceTree = "<group>"; };
 		3E4CDE17249F81130090B41C /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
@@ -73,7 +80,6 @@
 		3EB9EDCF249D3281008CB9FB /* NewsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EB9EDD2249D3281008CB9FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EB9EDD4249D3281008CB9FB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3EB9EDDC249D3281008CB9FB /* NewsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsApp.xcdatamodel; sourceTree = "<group>"; };
 		3EB9EDDE249D3282008CB9FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3EB9EDE1249D3282008CB9FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3EB9EDE3249D3282008CB9FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -133,6 +139,30 @@
 			path = Repository/Networking;
 			sourceTree = "<group>";
 		};
+		3E484C4D24A0C5980082B14C /* Typealias */ = {
+			isa = PBXGroup;
+			children = (
+				3E484C4E24A0C5BF0082B14C /* Requests.swift */,
+			);
+			path = Typealias;
+			sourceTree = "<group>";
+		};
+		3E484C5424A0FD7D0082B14C /* Copies */ = {
+			isa = PBXGroup;
+			children = (
+				3E484C5524A0FD8E0082B14C /* CommonCopies.swift */,
+			);
+			path = Copies;
+			sourceTree = "<group>";
+		};
+		3E484C5724A0FE840082B14C /* Copies */ = {
+			isa = PBXGroup;
+			children = (
+				3E4CDE10249F75420090B41C /* LoginCopies.swift */,
+			);
+			path = Copies;
+			sourceTree = "<group>";
+		};
 		3E4CDE12249F7CB50090B41C /* SessionManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				3E8A3E2B249F4E8B0001D366 /* Storyboarded.swift */,
+				3E484C5024A0F70B0082B14C /* CurrentFirstResponser.swift */,
+				3E484C5224A0FD320082B14C /* AlertShowing.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -188,9 +220,9 @@
 		3E8A3E31249F52960001D366 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E484C5724A0FE840082B14C /* Copies */,
 				3E5ADB0A249F57220076C7E8 /* LoginViewController.swift */,
 				3E5ADB0C249F57360076C7E8 /* Login.storyboard */,
-				3E4CDE10249F75420090B41C /* Copies.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,7 +265,6 @@
 				3EB9EDDE249D3282008CB9FB /* Assets.xcassets */,
 				3EB9EDE0249D3282008CB9FB /* LaunchScreen.storyboard */,
 				3EB9EDE3249D3282008CB9FB /* Info.plist */,
-				3EB9EDDB249D3281008CB9FB /* NewsApp.xcdatamodeld */,
 			);
 			path = NewsApp;
 			sourceTree = "<group>";
@@ -269,6 +300,8 @@
 		3EF2C361249E81CC000E6635 /* Commons */ = {
 			isa = PBXGroup;
 			children = (
+				3E484C5424A0FD7D0082B14C /* Copies */,
+				3E484C4D24A0C5980082B14C /* Typealias */,
 				3E8A3E34249F537C0001D366 /* Enums */,
 				3E8A3E2F249F50B60001D366 /* View */,
 				3E8A3E2A249F4E6B0001D366 /* Extensions */,
@@ -379,16 +412,20 @@
 			files = (
 				3E4CDE0C249F6DA60090B41C /* LoginRouterProtocol.swift in Sources */,
 				3EB9EE01249D3899008CB9FB /* Result.swift in Sources */,
-				3E4CDE11249F75420090B41C /* Copies.swift in Sources */,
+				3E484C5124A0F70B0082B14C /* CurrentFirstResponser.swift in Sources */,
+				3E4CDE11249F75420090B41C /* LoginCopies.swift in Sources */,
+				3E484C5324A0FD320082B14C /* AlertShowing.swift in Sources */,
 				3E4CDE14249F7CCB0090B41C /* SessionManager.swift in Sources */,
 				3EB9EE03249D38D0008CB9FB /* ErrorTypes.swift in Sources */,
 				3E209FCE249E136A00C3FFAF /* LoginRequest.swift in Sources */,
 				3E4CDE18249F81130090B41C /* LoginResult.swift in Sources */,
 				3E4CDE16249F7CE50090B41C /* DefaultSessionManager.swift in Sources */,
 				3EF2C35E249E7D6C000E6635 /* HTTPStatus.swift in Sources */,
+				3E484C5624A0FD8E0082B14C /* CommonCopies.swift in Sources */,
 				3E33165A249E1EDD00EE3F61 /* Endpoints.swift in Sources */,
 				3EB9EDFD249D36AC008CB9FB /* HTTPMethods.swift in Sources */,
 				3E8A3E33249F53350001D366 /* DefaultHTTPClient.swift in Sources */,
+				3E484C4F24A0C5BF0082B14C /* Requests.swift in Sources */,
 				3E5ADB0B249F57220076C7E8 /* LoginViewController.swift in Sources */,
 				3EB9EDD3249D3281008CB9FB /* AppDelegate.swift in Sources */,
 				3E8A3E2C249F4E8B0001D366 /* Storyboarded.swift in Sources */,
@@ -397,7 +434,6 @@
 				3E209FD4249E18FC00C3FFAF /* LoginCredentials.swift in Sources */,
 				3EB9EDFF249D3722008CB9FB /* HTTPEncoding.swift in Sources */,
 				3E209FCC249D4CF000C3FFAF /* DefaultLoginClient.swift in Sources */,
-				3EB9EDDD249D3281008CB9FB /* NewsApp.xcdatamodeld in Sources */,
 				3EB9EDFB249D363A008CB9FB /* APIRequest.swift in Sources */,
 				3EB9EDD5249D3281008CB9FB /* SceneDelegate.swift in Sources */,
 				3E4CDE08249F661F0090B41C /* LoginRouter.swift in Sources */,
@@ -664,19 +700,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3EB9EDDB249D3281008CB9FB /* NewsApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3EB9EDDC249D3281008CB9FB /* NewsApp.xcdatamodel */,
-			);
-			currentVersion = 3EB9EDDC249D3281008CB9FB /* NewsApp.xcdatamodel */;
-			path = NewsApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3EB9EDC7249D3281008CB9FB /* Project object */;
 }

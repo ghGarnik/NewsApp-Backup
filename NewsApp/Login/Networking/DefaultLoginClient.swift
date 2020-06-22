@@ -8,10 +8,6 @@
 
 import Foundation
 
-public typealias Path = String
-public typealias Parameters = [String: Any]?
-public typealias Headers = [String: String]?
-
 //MARK: - Dependencies
 
 protocol LoginClientDependenciesProtocol {
@@ -53,12 +49,30 @@ class DefaultLoginClient: LoginClient {
                                     self.loginDidSucceed(with: fetchedData?.accessToken ?? "")
                                     completion(.successful)
                                 case .failure(let error):
-                                    completion(.failure(error))
+                                    let message = self.messageForError(error)
+                                    completion(.failure(message))
                                 }
         })
     }
     
     private func loginDidSucceed(with token: String) {
+        //TODO: Write session info in SessionManager
         print("login successful: \n accessToken \(token)")
+    }
+    
+    
+    /// Converts networking error into intelligible text for the user.
+    /// - Parameter error: Networking produced error-
+    private func messageForError(_ error: NetworkingError) -> String {
+        switch error {
+        case .forbidden:
+            return LoginCopies.invalidCredentials
+        case .server:
+            return LoginCopies.serverError
+        case .networking(_):
+            return LoginCopies.appError
+        default:
+            return LoginCopies.appError
+        }
     }
 }

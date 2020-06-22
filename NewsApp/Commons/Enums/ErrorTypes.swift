@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum NewsError: Error {
+public enum NetworkingError: Error {
     case networking(_: String)
     case forbidden
-    case server(error: Error)
+    case server
     case unknownError
 }

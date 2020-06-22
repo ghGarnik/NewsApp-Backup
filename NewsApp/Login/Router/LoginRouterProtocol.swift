@@ -10,4 +10,5 @@ import Foundation
 
 protocol LoginRouterProtocol {
     func loginDidSucceed()
+    func loginDidFail(message: String)
 }

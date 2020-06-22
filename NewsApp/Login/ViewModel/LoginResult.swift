@@ -10,7 +10,7 @@ import Foundation
 
 enum LoginResult {
         case successful
-        case failure(NewsError)
+        case failure(String)
     }
 
 typealias LoginClientResponse = (LoginResult) -> ()

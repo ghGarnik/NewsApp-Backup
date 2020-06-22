@@ -10,7 +10,7 @@ import Foundation
 
 public enum Result<Value> {
     case successful(Value)
-    case failure(NewsError)
+    case failure(NetworkingError)
 }
 
 public typealias Response<Value> = (Result<Value>) -> ()
