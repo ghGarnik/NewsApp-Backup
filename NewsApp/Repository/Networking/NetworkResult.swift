@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum Result<Value> {
+public enum NetworkResult<Value> {
     case successful(Value)
     case failure(NetworkingError)
 }
 
-public typealias Response<Value> = (Result<Value>) -> ()
+public typealias NetworkResponse<Value> = (NetworkResult<Value>) -> ()

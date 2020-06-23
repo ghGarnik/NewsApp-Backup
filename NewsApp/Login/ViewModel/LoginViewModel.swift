@@ -44,4 +44,12 @@ extension LoginViewModel: LoginViewModelProtocol {
             }
         })
     }
+    
+    func didTapOnRetrieveToken() {
+        dependencies.loginClient.retrieveToken()
+    }
+    
+    func didTapOnLogout() {
+        dependencies.loginClient.removeToken()
+    }
 }

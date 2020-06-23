@@ -32,7 +32,7 @@ final public class LoginRouter: Storyboarded {
 
 extension LoginRouter: LoginRouterProtocol {
     func loginDidSucceed() {
-        
+        view.alert("Login did succeed :)")
     }
     
     func loginDidFail(message: String) {

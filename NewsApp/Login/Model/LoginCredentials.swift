@@ -13,7 +13,6 @@ struct LoginCredentials {
     let password: String
     let grantType: GrantType = .password
     
-    
     /// Converts credentials elements into Parameters.
     func toParammeters() -> Parameters {
         let parameters = ["username": username,

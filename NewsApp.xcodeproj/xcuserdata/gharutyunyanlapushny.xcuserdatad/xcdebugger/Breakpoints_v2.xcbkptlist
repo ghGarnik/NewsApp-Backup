@@ -215,138 +215,160 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "181D74ED-25EB-41B9-A222-03DD24A2DCFE"
+            uuid = "4170D0E3-0BD8-494A-860D-8F9DA849BF78"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Login/Networking/DefaultLoginClient.swift"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "66"
-            endingLineNumber = "66"
-            landmarkName = "messageForError(_:)"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "saveCredential(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "37A9CD09-F18B-445C-8B42-DAE7D764B77C"
+            uuid = "1D5A00F2-776D-496B-9CF1-FCC8DDEBFECB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Login/Networking/DefaultLoginClient.swift"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "saveCredential(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5C8B1A8C-91B1-4FCD-BB31-1E485342264B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "retrieveCredential(_:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "873FF065-0D6E-4D31-B538-02DC43600E72"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
             endingLineNumber = "68"
-            landmarkName = "messageForError(_:)"
+            landmarkName = "retrieveCredential(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C3D1F618-2F48-4E36-893A-60A7B0622AD0"
+            uuid = "C088AC55-F1A8-481F-9DCA-1F33C211F7F8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Login/Networking/DefaultLoginClient.swift"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "messageForError(_:)"
-            landmarkType = "7">
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "DefaultCredentialsStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3069ED90-1B79-4A65-9F24-996F895BE795"
+            uuid = "7E0AF90C-7B70-4188-8803-902653688ADF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Login/Networking/DefaultLoginClient.swift"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "messageForError(_:)"
-            landmarkType = "7">
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "DefaultCredentialsStore"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "11E14C56-9241-43E0-92EB-2ACBC5C355CF"
+            uuid = "7356F244-7347-4943-B569-A471D4950F6B"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Repository/Networking/DefaultHTTPClient.swift"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104">
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "DefaultCredentialsStore"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "7356F244-7347-4943-B569-A471D4950F6B - 614a26b0388c042e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NewsApp.RetrieveCredentialResult&lt;Swift.String&gt;) -&gt; () in NewsApp.DefaultCredentialsStore.updateCredential(_: NewsApp.Credential, completion: (NewsApp.SaveCredentialResult) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gharutyunyanlapushny/Documents/Gar/Repos%20Pruebas%20Te%CC%81cnicas/NewsApp/NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "350">
+               </Location>
+               <Location
+                  uuid = "7356F244-7347-4943-B569-A471D4950F6B - b41d63edf95c61ad"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (NewsApp.SimpleResult) -&gt; () in closure #1 (NewsApp.RetrieveCredentialResult&lt;Swift.String&gt;) -&gt; () in NewsApp.DefaultCredentialsStore.updateCredential(_: NewsApp.Credential, completion: (NewsApp.SaveCredentialResult) -&gt; ()) -&gt; ()"
+                  moduleName = "NewsApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/gharutyunyanlapushny/Documents/Gar/Repos%20Pruebas%20Te%CC%81cnicas/NewsApp/NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "10">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9F678A47-3A1B-47BE-8969-70D06A3552B4"
+            uuid = "8BFC3CD7-5B67-452A-B9C8-1F11F9434569"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsApp/Repository/Networking/DefaultHTTPClient.swift"
+            filePath = "NewsApp/SessionManager/StoreManager/DefaultCredentialsStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "AB3AF642-DC12-4ABA-AFC4-1ACEF1E04E3E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsApp/Repository/Networking/DefaultHTTPClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D8A1D24D-87B3-4257-80F8-9C705A7FFEFF"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsApp/Repository/Networking/DefaultHTTPClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "execute(_:parameters:completion:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "88408238-4417-41EF-9910-171954FAB623"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewsApp/Repository/Networking/DefaultHTTPClient.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "configureUrlRequest(_:parameters:)"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "updateCredential(_:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

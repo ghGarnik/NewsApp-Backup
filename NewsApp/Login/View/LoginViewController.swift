@@ -17,6 +17,8 @@ class LoginViewController: UIViewController, AlertShowing {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var loginScrollView: UIScrollView!
+    @IBOutlet weak var retrieveTokenButton: UIButton!
+    @IBOutlet weak var logoutButton: UIButton!
     
     //MARK: - Binding
     
@@ -51,6 +53,9 @@ class LoginViewController: UIViewController, AlertShowing {
         userTextField.placeholder = LoginCopies.user
         passwordTextField.placeholder = LoginCopies.password
         loginButton.setTitle(LoginCopies.login, for: .normal)
+        
+        retrieveTokenButton.setTitle(LoginCopies.retrieveToken, for: .normal)
+        logoutButton.setTitle(LoginCopies.logout, for: .normal)
     }
     
     private func configureTextfields() {
@@ -87,6 +92,14 @@ class LoginViewController: UIViewController, AlertShowing {
         let username = userTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         viewModel?.didTapOnLogin(username: username, password: password)
+    }
+    
+    @IBAction func retrieveToken(_ sender: Any) {
+        viewModel?.didTapOnRetrieveToken()
+    }
+    
+    @IBAction func logout(_ sender: Any) {
+        viewModel?.didTapOnLogout()
     }
 }
 
@@ -149,6 +162,7 @@ extension LoginViewController: UIScrollViewDelegate {
 }
 
 //MARK: - Keyboard
+
 extension LoginViewController {
     
     private func registerKeyboardNotifications() {
@@ -176,7 +190,6 @@ extension LoginViewController {
         return toolbar
     }
     
-    
     /// Scrolls up the view to avoid textfields to be hidden under keyboard. This function listens to keyboard notification.
     /// - Parameter notification: keyboard notification
     @objc private func keyboardDidShow(notification: NSNotification) {
@@ -199,11 +212,9 @@ extension LoginViewController {
         }
     }
     
-    
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
-    
     
     /// Resets scrollView content insets.
     @objc private func keyboardWillHide() {

@@ -31,14 +31,13 @@ public final class DefaultHTTPClient: HTTPClient {
     
     //MARK: -  Execute Request
     
-    
     /// Makes a HTTP Request.
     /// - Parameter request: Request to make
     /// - Parameter parameters: Parameters to include in the body.
     /// - Parameter completion: Closure to execute.
     func execute<T: APIRequest>(_ request: T,
                                 parameters: Parameters = nil,
-                                completion: @escaping Response<T.Response>) {
+                                completion: @escaping NetworkResponse<T.Response>) {
         
         //Cancels previous request if exists. Just to avoid side effects.
         activeRequest?.cancel()
@@ -99,7 +98,6 @@ public final class DefaultHTTPClient: HTTPClient {
         }
         return urlRequest
     }
-    
     
     /// Returns an error if the response status code contains any error code.
     /// - Parameter statusCode: A HTTP response status code.

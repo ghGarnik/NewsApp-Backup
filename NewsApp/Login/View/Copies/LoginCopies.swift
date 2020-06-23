@@ -13,6 +13,8 @@ enum LoginCopies {
     static let password = "type here your password"
     static let login = "Login >"
     static let done = "Done"
+    static let retrieveToken = "Retrieve Token"
+    static let logout = "Logout"
 }
 
 //MARK: - Login Errors

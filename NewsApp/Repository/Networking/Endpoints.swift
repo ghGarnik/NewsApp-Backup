@@ -13,7 +13,7 @@ public enum Endpoints {
     
     private var baseURL: String { return "https://mobilecodetest.fws.dev"}
     private var path: String {
-        switch self{
+        switch self {
         case .login:
             return "/auth/token"
         }

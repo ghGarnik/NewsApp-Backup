@@ -9,5 +9,8 @@
 import Foundation
 
 public protocol SessionManagerProtocol {
-    
+    func saveSessionToken(_ token: String, completion: @escaping SimpleResponse)
+    func retrieveSessionToken(completion: @escaping RetrieveSessionResponse<String>)
+    func isValidSession(completion: @escaping (Bool) -> ())
+    func removeCurrentToken(completion: @escaping SimpleResponse)
 }

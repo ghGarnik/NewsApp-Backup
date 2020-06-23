@@ -11,5 +11,5 @@ import Foundation
 protocol HTTPClient: class {
     func execute<T: APIRequest>(_ request: T,
                                 parameters: Parameters,
-                                completion: @escaping Response<T.Response>)
+                                completion: @escaping NetworkResponse<T.Response>)
 }

@@ -49,12 +49,30 @@
                                                     <action selector="login:" destination="yv3-JE-m3q" eventType="touchUpInside" id="wEC-K3-ySN"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqK-q3-wLT">
+                                                <rect key="frame" x="184" y="567" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="retrieveToken:" destination="yv3-JE-m3q" eventType="touchUpInside" id="IAT-Sq-JrO"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyl-T3-4sh">
+                                                <rect key="frame" x="184" y="629" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="logout:" destination="yv3-JE-m3q" eventType="touchUpInside" id="FsZ-L7-yDb"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="Rtj-8U-SOk" firstAttribute="centerY" secondItem="j7o-f5-u0y" secondAttribute="centerY" id="3A9-jj-egF"/>
+                                            <constraint firstItem="lqK-q3-wLT" firstAttribute="centerX" secondItem="j7o-f5-u0y" secondAttribute="centerX" id="6GU-Us-TSc"/>
+                                            <constraint firstItem="kyl-T3-4sh" firstAttribute="top" secondItem="lqK-q3-wLT" secondAttribute="bottom" constant="32" id="9Ef-cg-JOH"/>
                                             <constraint firstItem="F24-n7-j11" firstAttribute="top" secondItem="Rtj-8U-SOk" secondAttribute="bottom" constant="32" id="LtH-FU-4iR"/>
                                             <constraint firstItem="5S3-tH-m3k" firstAttribute="leading" secondItem="j7o-f5-u0y" secondAttribute="leading" id="Tbx-O5-EsP"/>
+                                            <constraint firstItem="kyl-T3-4sh" firstAttribute="centerX" secondItem="j7o-f5-u0y" secondAttribute="centerX" id="Vcy-NP-m7S"/>
+                                            <constraint firstItem="lqK-q3-wLT" firstAttribute="top" secondItem="F24-n7-j11" secondAttribute="bottom" constant="32" id="jmq-im-ecN"/>
                                             <constraint firstItem="5S3-tH-m3k" firstAttribute="top" secondItem="j7o-f5-u0y" secondAttribute="top" id="ljS-1w-ahI"/>
                                             <constraint firstAttribute="trailing" secondItem="Rtj-8U-SOk" secondAttribute="trailing" constant="64" id="prR-xi-kSB"/>
                                             <constraint firstItem="Rtj-8U-SOk" firstAttribute="leading" secondItem="j7o-f5-u0y" secondAttribute="leading" constant="64" id="rBB-Gy-2T3"/>
@@ -86,7 +104,9 @@
                         <outlet property="headerImage" destination="5S3-tH-m3k" id="UaO-ko-BAI"/>
                         <outlet property="loginButton" destination="F24-n7-j11" id="bIx-vL-6MI"/>
                         <outlet property="loginScrollView" destination="iUn-Ow-g7Z" id="yla-8w-qVj"/>
+                        <outlet property="logoutButton" destination="kyl-T3-4sh" id="eqn-NS-Qun"/>
                         <outlet property="passwordTextField" destination="kaC-zI-Vt4" id="mFL-nR-PLE"/>
+                        <outlet property="retrieveTokenButton" destination="lqK-q3-wLT" id="Qg7-Cr-SW9"/>
                         <outlet property="userTextField" destination="Llw-d9-fBa" id="rb5-Tx-dzw"/>
                     </connections>
                 </viewController>
