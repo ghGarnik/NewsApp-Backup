@@ -13,21 +13,40 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     var coordinator: Coordinator?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let navigationController = UINavigationController()
-        coordinator = MainCoordinator(dependencies: MainCoordinatorDependencies(), navigationController: navigationController)
-        coordinator?.start()
+        coordinator = MainCoordinator(dependencies: MainCoordinatorDependencies(), changeNavigationControllerCompletion: { [weak self] navigationController in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return }
+                
+                // If already does exist a window, switches between navigation controllers with animation.
+                if let currentWindow = self.window {
+                    currentWindow.rootViewController = navigationController
+                    UIView.transition(with: currentWindow,
+                                      duration: 0.3,
+                                      options: .transitionCrossDissolve,
+                                      animations: nil,
+                                      completion: nil)
+
+                }
+                
+                // Id don't, it creates a new window.
+                else {
+                    let window = UIWindow(windowScene: windowScene)
+                    window.rootViewController = navigationController
+                    self.window = window
+                    window.makeKeyAndVisible()
+                }
+            }
+        })
         
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = navigationController
-        self.window = window
-        window.makeKeyAndVisible()
+        coordinator?.start()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

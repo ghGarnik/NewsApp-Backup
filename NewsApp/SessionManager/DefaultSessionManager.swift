@@ -37,9 +37,8 @@ public final class DefaultSessionManager: SessionManagerProtocol {
         
         dependencies.credentialsStore.updateCredential(credential,
                                                        completion: { [weak self] response in
-                                                        guard let _ = self else {
-                                                            return
-                                                        }
+                                                        guard let self = self else { return }
+                                                        
                                                         switch response {
                                                         case .success:
                                                             completion(.success)
@@ -54,9 +53,8 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     public func retrieveSessionToken(completion: @escaping RetrieveSessionResponse<String>) {
         dependencies.credentialsStore.retrieveCredential(.token,
                                                          completion: { [weak self] response in
-                                                            guard let _ = self else {
-                                                                return
-                                                            }
+                                                            guard let self = self else { return }
+                                                            
                                                             switch response {
                                                             case .success(let token):
                                                                 completion(.success(token))
@@ -73,7 +71,7 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     
     public func removeCurrentToken(completion: @escaping SimpleResponse) {
         dependencies.credentialsStore.removeCredential(.token, completion: { response in
-            
+            completion(response)
         })
     }
     
@@ -81,9 +79,8 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     /// - Parameter completion: closure that manages rather the session is valid or not.
     public func isValidSession(completion: @escaping (Bool) -> ()) {
         retrieveSessionToken(completion: { [weak self] result in
-            guard let _ = self else {
-                return
-            }
+            guard let self = self else { return }
+            
             switch result {
             case .success:
                 completion(true)

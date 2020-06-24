@@ -23,16 +23,13 @@ public class DefaultCredentialsStore: CredentialsStore {
     /// - Parameter completion: Closures that manages updating result.
     public func updateCredential(_ credential: Credential, completion: @escaping UpdateCredentialResponse) {
         retrieveCredential(credential.type, completion: { [weak self] response in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             
             if case .success = response {
                 self.removeCredential(credential.type, completion:  { _ in })
             }
             self.saveCredential(credential, completion: completion)
         })
-        
     }
     
     /// Stores credential in KeyChain. If it already exists, completes with error.
@@ -70,7 +67,7 @@ public class DefaultCredentialsStore: CredentialsStore {
         let status: OSStatus = SecItemCopyMatching(query as CFDictionary, &item)
         
         guard status == noErr else {
-            completion(.failure(.reading))
+            completion(.failure(.keyNotFound))
             return
         }
         
@@ -83,10 +80,27 @@ public class DefaultCredentialsStore: CredentialsStore {
         }
     }
     
-    /// Removes existing credential from Keychain. If the credential actually doesn't exist, it completes with error.
+    /// Removes existing credential from Keychain. If the credential actually doesn't exist, it also completes with success.
     /// - Parameter credential: Credential type to remove.
     /// - Parameter completion: Closure that manages removing.
     public func removeCredential(_ credential: CredentialType, completion: @escaping SimpleResponse) {
+        retrieveCredential(credential, completion: { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response {
+            case .success:
+                self.deleteCredential(credential, completion: completion)
+            case .failure(let error):
+                if case .keyNotFound = error {
+                    completion(.success)
+                } else {
+                    completion(.error)
+                }
+            }
+        })
+    }
+    
+    private func deleteCredential(_ credential: CredentialType, completion: @escaping SimpleResponse) {
         let credentialType = credential.rawValue
         let query: [String: Any] = [kSecClass as String: kSecClassGenericPassword,
                                     kSecAttrGeneric as String: credentialType]

@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E14DDD024A3B93300226E5F /* NewsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDCF24A3B93300226E5F /* NewsListViewController.swift */; };
+		3E14DDD224A3B94F00226E5F /* NewsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E14DDD124A3B94F00226E5F /* NewsList.storyboard */; };
+		3E14DDD424A3B9FE00226E5F /* NewsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDD324A3B9FE00226E5F /* NewsListViewModel.swift */; };
+		3E14DDD624A3BA1400226E5F /* NewsListViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDD524A3BA1400226E5F /* NewsListViewModelProtocol.swift */; };
+		3E14DDD824A3BAB300226E5F /* NewsListRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDD724A3BAB300226E5F /* NewsListRouterProtocol.swift */; };
+		3E14DDDA24A3BAC900226E5F /* NewsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDD924A3BAC900226E5F /* NewsListRouter.swift */; };
+		3E14DDDD24A3C0E600226E5F /* NewsListCopies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDDC24A3C0E600226E5F /* NewsListCopies.swift */; };
+		3E14DDDF24A3E03E00226E5F /* LoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDDE24A3E03E00226E5F /* LoginClient.swift */; };
+		3E14DDE224A3E08900226E5F /* LoginClientDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDE124A3E08900226E5F /* LoginClientDependencies.swift */; };
+		3E14DDE424A3E0CB00226E5F /* LoginViewModelDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E14DDE324A3E0CB00226E5F /* LoginViewModelDependencies.swift */; };
 		3E209FCA249D4BF900C3FFAF /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E209FC9249D4BF900C3FFAF /* HTTPClient.swift */; };
 		3E209FCC249D4CF000C3FFAF /* DefaultLoginClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E209FCB249D4CF000C3FFAF /* DefaultLoginClient.swift */; };
 		3E209FCE249E136A00C3FFAF /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E209FCD249E136A00C3FFAF /* LoginRequest.swift */; };
@@ -65,6 +75,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3E14DDCF24A3B93300226E5F /* NewsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewController.swift; sourceTree = "<group>"; };
+		3E14DDD124A3B94F00226E5F /* NewsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsList.storyboard; sourceTree = "<group>"; };
+		3E14DDD324A3B9FE00226E5F /* NewsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModel.swift; sourceTree = "<group>"; };
+		3E14DDD524A3BA1400226E5F /* NewsListViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListViewModelProtocol.swift; sourceTree = "<group>"; };
+		3E14DDD724A3BAB300226E5F /* NewsListRouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRouterProtocol.swift; sourceTree = "<group>"; };
+		3E14DDD924A3BAC900226E5F /* NewsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListRouter.swift; sourceTree = "<group>"; };
+		3E14DDDC24A3C0E600226E5F /* NewsListCopies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsListCopies.swift; sourceTree = "<group>"; };
+		3E14DDDE24A3E03E00226E5F /* LoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClient.swift; sourceTree = "<group>"; };
+		3E14DDE124A3E08900226E5F /* LoginClientDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginClientDependencies.swift; sourceTree = "<group>"; };
+		3E14DDE324A3E0CB00226E5F /* LoginViewModelDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelDependencies.swift; sourceTree = "<group>"; };
 		3E209FC9249D4BF900C3FFAF /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		3E209FCB249D4CF000C3FFAF /* DefaultLoginClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultLoginClient.swift; sourceTree = "<group>"; };
 		3E209FCD249E136A00C3FFAF /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
@@ -134,6 +154,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E14DDC824A3B88800226E5F /* View Modules */ = {
+			isa = PBXGroup;
+			children = (
+				3E14DDC924A3B8A800226E5F /* NewsList */,
+				3E209FD1249E13A600C3FFAF /* Login */,
+			);
+			path = "View Modules";
+			sourceTree = "<group>";
+		};
+		3E14DDC924A3B8A800226E5F /* NewsList */ = {
+			isa = PBXGroup;
+			children = (
+				3E14DDCA24A3B8B900226E5F /* View */,
+				3E14DDCB24A3B8BF00226E5F /* ViewModel */,
+				3E14DDCC24A3B8C600226E5F /* Model */,
+				3E14DDCD24A3B8CC00226E5F /* Repository */,
+				3E14DDCE24A3B8D800226E5F /* Router */,
+			);
+			path = NewsList;
+			sourceTree = "<group>";
+		};
+		3E14DDCA24A3B8B900226E5F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3E14DDDB24A3C0D500226E5F /* Copies */,
+				3E14DDCF24A3B93300226E5F /* NewsListViewController.swift */,
+				3E14DDD124A3B94F00226E5F /* NewsList.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3E14DDCB24A3B8BF00226E5F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3E14DDD324A3B9FE00226E5F /* NewsListViewModel.swift */,
+				3E14DDD524A3BA1400226E5F /* NewsListViewModelProtocol.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3E14DDCC24A3B8C600226E5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3E14DDCD24A3B8CC00226E5F /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		3E14DDCE24A3B8D800226E5F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				3E14DDD724A3BAB300226E5F /* NewsListRouterProtocol.swift */,
+				3E14DDD924A3BAC900226E5F /* NewsListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		3E14DDDB24A3C0D500226E5F /* Copies */ = {
+			isa = PBXGroup;
+			children = (
+				3E14DDDC24A3C0E600226E5F /* NewsListCopies.swift */,
+			);
+			path = Copies;
+			sourceTree = "<group>";
+		};
+		3E14DDE024A3E06000226E5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3E209FCD249E136A00C3FFAF /* LoginRequest.swift */,
+				3E209FCF249E13A200C3FFAF /* LoginResponse.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		3E209FD1249E13A600C3FFAF /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +311,7 @@
 				3E4CDE09249F6D100090B41C /* LoginViewModel.swift */,
 				3E4CDE0D249F6E430090B41C /* LoginViewModelProtocol.swift */,
 				3E4CDE17249F81130090B41C /* LoginResult.swift */,
+				3E14DDE324A3E0CB00226E5F /* LoginViewModelDependencies.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -311,11 +412,11 @@
 		3EB9EDD1249D3281008CB9FB /* NewsApp */ = {
 			isa = PBXGroup;
 			children = (
+				3E14DDC824A3B88800226E5F /* View Modules */,
 				3EB7410024A3A9CE00B693C7 /* Coordinator */,
 				3E4CDE12249F7CB50090B41C /* SessionManager */,
 				3E209FD2249E186100C3FFAF /* Networking */,
 				3EF2C361249E81CC000E6635 /* Commons */,
-				3E209FD1249E13A600C3FFAF /* Login */,
 				3EB9EDD2249D3281008CB9FB /* AppDelegate.swift */,
 				3EB9EDD4249D3281008CB9FB /* SceneDelegate.swift */,
 				3EB9EDDE249D3282008CB9FB /* Assets.xcassets */,
@@ -346,9 +447,10 @@
 		3EF2C360249E805D000E6635 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				3E209FCD249E136A00C3FFAF /* LoginRequest.swift */,
-				3E209FCF249E13A200C3FFAF /* LoginResponse.swift */,
+				3E14DDE024A3E06000226E5F /* Model */,
 				3E209FCB249D4CF000C3FFAF /* DefaultLoginClient.swift */,
+				3E14DDDE24A3E03E00226E5F /* LoginClient.swift */,
+				3E14DDE124A3E08900226E5F /* LoginClientDependencies.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -450,6 +552,7 @@
 				3E5ADB0D249F57360076C7E8 /* Login.storyboard in Resources */,
 				3EB9EDE2249D3282008CB9FB /* LaunchScreen.storyboard in Resources */,
 				3EB9EDDF249D3282008CB9FB /* Assets.xcassets in Resources */,
+				3E14DDD224A3B94F00226E5F /* NewsList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,9 +573,12 @@
 				3E4CDE0C249F6DA60090B41C /* LoginRouterProtocol.swift in Sources */,
 				3EB9EE01249D3899008CB9FB /* NetworkResult.swift in Sources */,
 				3E484C5124A0F70B0082B14C /* CurrentFirstResponser.swift in Sources */,
+				3E14DDD024A3B93300226E5F /* NewsListViewController.swift in Sources */,
 				3E4CDE11249F75420090B41C /* LoginCopies.swift in Sources */,
+				3E14DDD624A3BA1400226E5F /* NewsListViewModelProtocol.swift in Sources */,
 				3E484C5324A0FD320082B14C /* AlertShowing.swift in Sources */,
 				3E4CDE14249F7CCB0090B41C /* SessionManager.swift in Sources */,
+				3E14DDE224A3E08900226E5F /* LoginClientDependencies.swift in Sources */,
 				3EB1A33824A1600A009A62BD /* SimpleResult.swift in Sources */,
 				3EB1A33624A152D8009A62BD /* CredentialsStoreError.swift in Sources */,
 				3EB9EE03249D38D0008CB9FB /* ErrorTypes.swift in Sources */,
@@ -482,8 +588,12 @@
 				3E4CDE18249F81130090B41C /* LoginResult.swift in Sources */,
 				3EB1A32F24A14CDB009A62BD /* UpdateCredentialResult.swift in Sources */,
 				3E9FFD4324A1481D004CBB84 /* Credential.swift in Sources */,
+				3E14DDE424A3E0CB00226E5F /* LoginViewModelDependencies.swift in Sources */,
 				3EB1A33124A1506C009A62BD /* RetrieveSessionResult.swift in Sources */,
+				3E14DDD424A3B9FE00226E5F /* NewsListViewModel.swift in Sources */,
 				3E9FFD4A24A14C75004CBB84 /* RetrieveCredentialResult.swift in Sources */,
+				3E14DDD824A3BAB300226E5F /* NewsListRouterProtocol.swift in Sources */,
+				3E14DDDA24A3BAC900226E5F /* NewsListRouter.swift in Sources */,
 				3E4CDE16249F7CE50090B41C /* DefaultSessionManager.swift in Sources */,
 				3EF2C35E249E7D6C000E6635 /* HTTPStatus.swift in Sources */,
 				3E484C5624A0FD8E0082B14C /* CommonCopies.swift in Sources */,
@@ -496,7 +606,9 @@
 				3E8A3E2C249F4E8B0001D366 /* Storyboarded.swift in Sources */,
 				3E209FD0249E13A200C3FFAF /* LoginResponse.swift in Sources */,
 				3E8A3E2E249F4FAE0001D366 /* UIStoryboard+instantiateViewController.swift in Sources */,
+				3E14DDDD24A3C0E600226E5F /* NewsListCopies.swift in Sources */,
 				3E209FD4249E18FC00C3FFAF /* LoginCredentials.swift in Sources */,
+				3E14DDDF24A3E03E00226E5F /* LoginClient.swift in Sources */,
 				3EB9EDFF249D3722008CB9FB /* HTTPEncoding.swift in Sources */,
 				3E209FCC249D4CF000C3FFAF /* DefaultLoginClient.swift in Sources */,
 				3EB7410224A3A9E800B693C7 /* Coordinator.swift in Sources */,

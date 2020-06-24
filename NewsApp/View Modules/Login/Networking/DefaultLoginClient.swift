@@ -8,28 +8,6 @@
 
 import Foundation
 
-//MARK: - Dependencies
-
-protocol LoginClientDependenciesProtocol {
-    var networkManager: HTTPClient { get }
-    var sessionManager: SessionManagerProtocol { get }
-}
-
-final class LoginClientDependencies: LoginClientDependenciesProtocol {
-    lazy var networkManager: HTTPClient = DefaultHTTPClient()
-    lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
-}
-
-//MARK: - Protocol
-
-protocol LoginClient {
-    func login(_ loginSettings: LoginCredentials, completion: @escaping LoginClientResponse)
-    func retrieveToken()
-    func removeToken()
-}
-
-//MARK: - Default Implementation
-
 class DefaultLoginClient: LoginClient {
     private let dependencies: LoginClientDependenciesProtocol
     
@@ -48,9 +26,7 @@ class DefaultLoginClient: LoginClient {
         dependencies.networkManager.execute(request,
                                             parameters: loginCredentials.toParammeters(),
                                             completion: { [weak self] response in
-                                                guard let self = self else {
-                                                    return
-                                                }
+                                                guard let self = self else { return }
                                                 
                                                 switch response {
                                                 case .successful(let fetchedData):
@@ -62,35 +38,13 @@ class DefaultLoginClient: LoginClient {
         })
     }
     
-    func retrieveToken() {
-        dependencies.sessionManager.retrieveSessionToken(completion: { response in
-            switch response {
-            case .success(let token):
-                print("Current token is: \(token)")
-            case .failure(let error):
-                switch error {
-                case .technical:
-                    print("Cant read current token")
-                case .tokenNotFound:
-                    print("There is no stored token")
-                }
-            }
-        })
-    }
-    
-    func removeToken() {
-        dependencies.sessionManager.removeCurrentToken(completion: { response in
-            
-        })
-    }
-    
     private func loginDidSucceed(with token: String, completion: @escaping LoginClientResponse) {
         dependencies.sessionManager.saveSessionToken(token, completion: { result in
             switch result {
             case .success:
                 completion(.successful)
             case .error:
-                completion(.failure(LoginCopies.appError))
+                completion(.failure(CommonCopies.appError))
                 
             }
         })
@@ -105,11 +59,11 @@ class DefaultLoginClient: LoginClient {
         case .forbidden:
             return LoginCopies.invalidCredentials
         case .server:
-            return LoginCopies.serverError
+            return CommonCopies.serverError
         case .networking(_):
-            return LoginCopies.appError
+            return CommonCopies.appError
         default:
-            return LoginCopies.appError
+            return CommonCopies.appError
         }
     }
 }

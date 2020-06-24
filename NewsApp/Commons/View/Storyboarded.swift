@@ -29,7 +29,7 @@ public extension Storyboarded {
     }
     
     static func viewControllerFromStoryboard() -> UIViewController {
-        print("WARNING! This implementation of viewControllerFromStoryboard should never be called!")
+        debugPrint("WARNING! This implementation of viewControllerFromStoryboard should never be called!")
         return UIViewController()
     }
 }

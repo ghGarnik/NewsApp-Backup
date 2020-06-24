@@ -17,8 +17,6 @@ class LoginViewController: UIViewController, AlertShowing {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var headerImage: UIImageView!
     @IBOutlet weak var loginScrollView: UIScrollView!
-    @IBOutlet weak var retrieveTokenButton: UIButton!
-    @IBOutlet weak var logoutButton: UIButton!
     
     //MARK: - Binding
     
@@ -53,9 +51,6 @@ class LoginViewController: UIViewController, AlertShowing {
         userTextField.placeholder = LoginCopies.user
         passwordTextField.placeholder = LoginCopies.password
         loginButton.setTitle(LoginCopies.login, for: .normal)
-        
-        retrieveTokenButton.setTitle(LoginCopies.retrieveToken, for: .normal)
-        logoutButton.setTitle(LoginCopies.logout, for: .normal)
     }
     
     private func configureTextfields() {
@@ -92,14 +87,6 @@ class LoginViewController: UIViewController, AlertShowing {
         let username = userTextField.text ?? ""
         let password = passwordTextField.text ?? ""
         viewModel?.didTapOnLogin(username: username, password: password)
-    }
-    
-    @IBAction func retrieveToken(_ sender: Any) {
-        viewModel?.didTapOnRetrieveToken()
-    }
-    
-    @IBAction func logout(_ sender: Any) {
-        viewModel?.didTapOnLogout()
     }
 }
 
@@ -182,7 +169,7 @@ extension LoginViewController {
         toolbar.sizeToFit()
         
         let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let doneButton = UIBarButtonItem(title: LoginCopies.done, style: .done, target: self, action: #selector(dismissKeyboard))
+        let doneButton = UIBarButtonItem(title: CommonCopies.keyboarDone, style: .done, target: self, action: #selector(dismissKeyboard))
         
         toolbar.setItems([flexBarButton, doneButton], animated: false)
         toolbar.isUserInteractionEnabled = true

@@ -48,9 +48,7 @@ public final class DefaultHTTPClient: HTTPClient {
         }
         
         let task = session.dataTask(with: urlRequest, completionHandler: { [weak self] data, response, error in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(.unknownError))

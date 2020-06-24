@@ -8,18 +8,6 @@
 
 import Foundation
 
-//MARK: - Dependencies
-
-protocol LoginViewModelDependenciesProtocol {
-    var loginClient: LoginClient { get }
-}
-
-final class LoginViewModelDependencies: LoginViewModelDependenciesProtocol {
-    lazy var loginClient: LoginClient = DefaultLoginClient(dependencies: LoginClientDependencies())
-}
-
-//MARK: - ViewModel
-
 final class LoginViewModel {
     private let dependencies: LoginViewModelDependenciesProtocol
     private let router: LoginRouterProtocol
@@ -36,9 +24,7 @@ extension LoginViewModel: LoginViewModelProtocol {
     func didTapOnLogin(username: String, password: String) {
         let credentials = LoginCredentials(username: username, password: password)
         dependencies.loginClient.login(credentials, completion: { [weak self] response in
-            guard let self = self else {
-                return
-            }
+            guard let self = self else { return }
             
             switch response {
             case .successful:
@@ -47,13 +33,5 @@ extension LoginViewModel: LoginViewModelProtocol {
                 self.router.loginDidFail(message: message)
             }
         })
-    }
-    
-    func didTapOnRetrieveToken() {
-        dependencies.loginClient.retrieveToken()
-    }
-    
-    func didTapOnLogout() {
-        dependencies.loginClient.removeToken()
     }
 }

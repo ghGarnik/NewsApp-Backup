@@ -10,6 +10,4 @@ import Foundation
 
 protocol LoginViewModelProtocol {
     func didTapOnLogin(username: String, password: String)
-    func didTapOnRetrieveToken()
-    func didTapOnLogout()
 }
