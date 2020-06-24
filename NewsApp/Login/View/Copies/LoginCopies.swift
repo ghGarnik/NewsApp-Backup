@@ -18,6 +18,7 @@ enum LoginCopies {
 }
 
 //MARK: - Login Errors
+
 extension LoginCopies {
     static let invalidCredentials = "Upps...Your username or password seems to be wrong."
     static let serverError = "Server is just waking up from a short nap. Try again later."

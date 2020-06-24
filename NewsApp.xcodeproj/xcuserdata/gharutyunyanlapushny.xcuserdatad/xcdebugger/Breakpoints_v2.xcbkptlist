@@ -320,8 +320,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
-            landmarkName = "DefaultCredentialsStore"
-            landmarkType = "3">
+            landmarkName = "updateCredential(_:completion:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "7356F244-7347-4943-B569-A471D4950F6B - 614a26b0388c042e"

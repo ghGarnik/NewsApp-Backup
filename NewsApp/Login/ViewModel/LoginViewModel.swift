@@ -35,8 +35,12 @@ final class LoginViewModel {
 extension LoginViewModel: LoginViewModelProtocol {
     func didTapOnLogin(username: String, password: String) {
         let credentials = LoginCredentials(username: username, password: password)
-        dependencies.loginClient.login(credentials, completion: { result in
-            switch result {
+        dependencies.loginClient.login(credentials, completion: { [weak self] response in
+            guard let self = self else {
+                return
+            }
+            
+            switch response {
             case .successful:
                 self.router.loginDidSucceed()
             case .failure(let message):

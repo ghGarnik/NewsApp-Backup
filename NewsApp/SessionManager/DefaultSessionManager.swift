@@ -36,8 +36,11 @@ public final class DefaultSessionManager: SessionManagerProtocol {
         let credential = Credential(type: .token, value: token)
         
         dependencies.credentialsStore.updateCredential(credential,
-                                                     completion: { result in
-                                                        switch result {
+                                                       completion: { [weak self] response in
+                                                        guard let _ = self else {
+                                                            return
+                                                        }
+                                                        switch response {
                                                         case .success:
                                                             completion(.success)
                                                         case .failure:
@@ -50,8 +53,11 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     /// - Parameter completion: Closure that manages response.
     public func retrieveSessionToken(completion: @escaping RetrieveSessionResponse<String>) {
         dependencies.credentialsStore.retrieveCredential(.token,
-                                                         completion: { result in
-                                                            switch result {
+                                                         completion: { [weak self] response in
+                                                            guard let _ = self else {
+                                                                return
+                                                            }
+                                                            switch response {
                                                             case .success(let token):
                                                                 completion(.success(token))
                                                             case .failure(let credentialError):
@@ -74,7 +80,10 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     /// Retrieves if there is current session available.
     /// - Parameter completion: closure that manages rather the session is valid or not.
     public func isValidSession(completion: @escaping (Bool) -> ()) {
-        retrieveSessionToken(completion: { result in
+        retrieveSessionToken(completion: { [weak self] result in
+            guard let _ = self else {
+                return
+            }
             switch result {
             case .success:
                 completion(true)

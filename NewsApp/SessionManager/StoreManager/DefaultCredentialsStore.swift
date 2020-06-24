@@ -22,7 +22,11 @@ public class DefaultCredentialsStore: CredentialsStore {
     /// - Parameter credential: Credential object containing type and value to update.
     /// - Parameter completion: Closures that manages updating result.
     public func updateCredential(_ credential: Credential, completion: @escaping UpdateCredentialResponse) {
-        retrieveCredential(credential.type, completion: { response in
+        retrieveCredential(credential.type, completion: { [weak self] response in
+            guard let self = self else {
+                return
+            }
+            
             if case .success = response {
                 self.removeCredential(credential.type, completion:  { _ in })
             }

@@ -46,15 +46,19 @@ class DefaultLoginClient: LoginClient {
         let request = LoginRequest(path: url)
         
         dependencies.networkManager.execute(request,
-                               parameters: loginCredentials.toParammeters(),
-                               completion: { response in
-                                switch response {
-                                case .successful(let fetchedData):
-                                    self.loginDidSucceed(with: fetchedData?.accessToken ?? "", completion: completion)
-                                case .failure(let error):
-                                    let message = self.messageForError(error)
-                                    completion(.failure(message))
-                                }
+                                            parameters: loginCredentials.toParammeters(),
+                                            completion: { [weak self] response in
+                                                guard let self = self else {
+                                                    return
+                                                }
+                                                
+                                                switch response {
+                                                case .successful(let fetchedData):
+                                                    self.loginDidSucceed(with: fetchedData?.accessToken ?? "", completion: completion)
+                                                case .failure(let error):
+                                                    let message = self.messageForError(error)
+                                                    completion(.failure(message))
+                                                }
         })
     }
     

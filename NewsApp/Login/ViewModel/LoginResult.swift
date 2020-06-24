@@ -9,8 +9,8 @@
 import Foundation
 
 enum LoginResult {
-        case successful
-        case failure(String)
-    }
+    case successful
+    case failure(String)
+}
 
 typealias LoginClientResponse = (LoginResult) -> ()
