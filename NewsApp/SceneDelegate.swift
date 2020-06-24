@@ -11,6 +11,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: Coordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -19,9 +20,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let loginView = LoginRouter.assembleModule()
-        let navigationController = UINavigationController(rootViewController: loginView)
-        navigationController.setNavigationBarHidden(true, animated: false)
+        let navigationController = UINavigationController()
+        coordinator = MainCoordinator(dependencies: MainCoordinatorDependencies(), navigationController: navigationController)
+        coordinator?.start()
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = navigationController

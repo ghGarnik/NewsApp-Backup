@@ -10,14 +10,16 @@ import UIKit
 
 final public class LoginRouter: Storyboarded {
     weak private var view: LoginViewController!
+    weak private var coordinator: Coordinator?
     
-    init(withView view: LoginViewController) {
+    init(withView view: LoginViewController, coordinator: Coordinator) {
         self.view = view
+        self.coordinator = coordinator
     }
     
-    public static func assembleModule() -> UIViewController {
+    public static func assembleModule(coordinator: Coordinator) -> UIViewController {
         let viewController: LoginViewController = viewControllerFromStoryboard()
-        let router = LoginRouter(withView: viewController)
+        let router = LoginRouter(withView: viewController, coordinator: coordinator)
         let dependencies = LoginViewModelDependencies()
         let viewModel = LoginViewModel(dependencies: dependencies,
                                        router: router)
@@ -32,7 +34,7 @@ final public class LoginRouter: Storyboarded {
 
 extension LoginRouter: LoginRouterProtocol {
     func loginDidSucceed() {
-        view.alert("Login did succeed :)")
+        coordinator?.loginDidSucceed()
     }
     
     func loginDidFail(message: String) {
