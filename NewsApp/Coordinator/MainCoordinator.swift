@@ -70,10 +70,13 @@ extension MainCoordinator: Coordinator {
 extension MainCoordinator {
     private func loadLoginScreen() {
         let loginView = LoginRouter.assembleModule(coordinator: self)
-        let navigationController = UINavigationController()
-        navigationController.pushViewController(loginView, animated: true)
-        navigationController.setNavigationBarHidden(true, animated: false)
-        self.navigationController = navigationController
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self else { return }
+            let navigationController = UINavigationController()
+            navigationController.pushViewController(loginView, animated: true)
+            navigationController.setNavigationBarHidden(true, animated: false)
+            self.navigationController = navigationController
+        }
     }
 }
 

@@ -34,8 +34,7 @@ public class ArticlesListRouter: Storyboarded {
 }
 
 extension ArticlesListRouter: ArticlesListRouterProtocol {
-    
-    public func showError(_ message: String, completion: @escaping Action) {
+    public func showMessage(_ message: String, completion: @escaping Action) {
         view.alert(message, completion: completion)
     }
     

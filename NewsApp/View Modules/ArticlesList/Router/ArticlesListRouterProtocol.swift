@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol ArticlesListRouterProtocol {
-    func showError(_ message: String, completion: @escaping Action)
+    func showMessage(_ message: String, completion: @escaping Action)
     func logoutDidSucceed()
 }

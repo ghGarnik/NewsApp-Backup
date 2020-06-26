@@ -18,6 +18,7 @@ public enum CommonCopies {
 extension CommonCopies {
     static let serverError = "Server is just waking up from a short nap. Try again later."
     static let appError = "Our developers are not inspired today. Try again. If it persists, please contact us"
+    static let sessionExpired = "Your session has expired. Please, login again"
 }
 
 //MARK: - Keyboard copies

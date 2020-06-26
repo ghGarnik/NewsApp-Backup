@@ -14,13 +14,15 @@ class ArticlesListViewController: UIViewController, AlertShowing {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setLogoutButton()
+        setupNavigationBar()
         viewModel?.viewDidLoad()
     }
     
-    private func setLogoutButton() {
+    private func setupNavigationBar() {
+        navigationController?.title = ArticlesListCopies.listTitle
+        
         let logoutButton = UIBarButtonItem(title: ArticlesListCopies.logout, style: .plain, target: self, action: #selector(logout))
-        navigationItem.setLeftBarButton(logoutButton, animated: false)
+        navigationItem.setRightBarButton(logoutButton, animated: false)
     }
     
     @objc private func logout() {

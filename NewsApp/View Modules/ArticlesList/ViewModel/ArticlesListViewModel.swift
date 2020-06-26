@@ -35,7 +35,7 @@ extension ArticlesListViewModel: ArticlesListViewModelProtocol {
                 case .notLoggedIn:
                     self.didTapOnLogout()
                 case .appError:
-                    self.router.showError(CommonCopies.appError) { [weak self] in
+                    self.router.showMessage(CommonCopies.appError) { [weak self] in
                         guard let self = self else { return }
                         self.viewDidLoad()
                     }
@@ -49,9 +49,13 @@ extension ArticlesListViewModel: ArticlesListViewModelProtocol {
             
             switch response {
             case .success:
+                self.router.showMessage(CommonCopies.sessionExpired) { [weak self] in
+                    guard let self = self else { return }
+                    self.router.logoutDidSucceed()
+                }
                 self.router.logoutDidSucceed()
             case .error:
-                self.router.showError(CommonCopies.appError) { [weak self] in
+                self.router.showMessage(CommonCopies.appError) { [weak self] in
                     guard let self = self else { return }
                     self.didTapOnLogout()
                 }
