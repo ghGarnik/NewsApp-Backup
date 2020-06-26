@@ -9,6 +9,5 @@
 import Foundation
 
 public enum HTTPEncoding {
-    case urlEncoding
     case jsonEncoding
 }

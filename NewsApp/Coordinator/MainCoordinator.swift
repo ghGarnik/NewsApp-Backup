@@ -63,6 +63,10 @@ extension MainCoordinator: Coordinator {
     public func logoutDidSucceed() {
         loadLoginScreen()
     }
+    
+    public func openArticle(withId id: Int) {
+        loadArticleDetail(articleId: id)
+    }
 }
 
 //MARK: - Load Login
@@ -92,6 +96,25 @@ extension MainCoordinator {
             navigationController.pushViewController(articlesListView, animated: true)
             navigationController.setNavigationBarHidden(false, animated: false)
             self.navigationController = navigationController
+        }
+    }
+}
+
+//MARK: - Article Detail
+
+extension MainCoordinator {
+    public func loadArticleDetail(articleId id: Int) {
+        let articleDetailView = ArticleDetailRouter.assembleModule(coordinator: self,
+                                                                   articleId: id)
+        DispatchQueue.main.async { [weak self] in
+            guard let self = self,
+                let navigationController = self.navigationController  else 
+            {
+                return
+            }
+            
+            navigationController.pushViewController(articleDetailView, animated: true)
+            navigationController.setNavigationBarHidden(false, animated: false)
         }
     }
 }

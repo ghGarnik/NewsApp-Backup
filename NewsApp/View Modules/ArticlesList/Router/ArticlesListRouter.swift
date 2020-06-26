@@ -39,7 +39,7 @@ extension ArticlesListRouter: ArticlesListRouterProtocol {
     }
     
     public func navigateToArticle(_ articleId: Int) {
-        debugPrint("Navigating to article id \(articleId)")
+        coordinator?.openArticle(withId: articleId)
     }
     
     public func logoutDidSucceed() {

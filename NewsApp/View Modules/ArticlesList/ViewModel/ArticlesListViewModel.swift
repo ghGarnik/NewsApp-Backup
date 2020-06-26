@@ -31,21 +31,9 @@ extension ArticlesListViewModel: ArticlesListViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let articles):
-                let articlesObservable = Observable(articles)
                 self.articles.value = articles
             case .failure(let error):
-                switch error {
-                case .notLoggedIn:
-                    self.router.showMessage(CommonCopies.sessionExpired) { [weak self] in
-                        guard let self = self else { return }
-                        self.didTapOnLogout()
-                    }
-                case .appError:
-                    self.router.showMessage(CommonCopies.appError) { [weak self] in
-                        guard let self = self else { return }
-                        self.viewDidLoad()
-                    }
-                }
+                self.manageError(error)
             }
         }
     }
@@ -68,5 +56,24 @@ extension ArticlesListViewModel: ArticlesListViewModelProtocol {
                 }
             }
         })
+    }
+}
+
+//MARK: - Error Management
+
+extension ArticlesListViewModel {
+    private func manageError(_ error: ArticlesListClientError) {
+        switch error {
+        case .notLoggedIn:
+            router.showMessage(CommonCopies.sessionExpired) { [weak self] in
+                guard let self = self else { return }
+                self.didTapOnLogout()
+            }
+        case .appError:
+            router.showMessage(CommonCopies.appError) { [weak self] in
+                guard let self = self else { return }
+                self.viewDidLoad()
+            }
+        }
     }
 }

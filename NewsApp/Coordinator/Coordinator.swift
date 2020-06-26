@@ -12,4 +12,5 @@ public protocol Coordinator: class {
     func start()
     func loginDidSucceed()
     func logoutDidSucceed()
+    func openArticle(withId _: Int)
 }

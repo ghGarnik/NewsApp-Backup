@@ -14,5 +14,4 @@ public protocol DefaultArticlesListClientDependenciesProtocol {
 
 public final class DefaultArticlesListClientDependencies: DefaultArticlesListClientDependenciesProtocol {
     public lazy var network: HTTPClient = DefaultHTTPClient(dependencies: DefaultHTTPClientDependencies())
-    public lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
 }

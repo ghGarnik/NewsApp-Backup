@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class ArticleCell: UITableViewCell, NibReusable {
     
@@ -18,7 +19,11 @@ final class ArticleCell: UITableViewCell, NibReusable {
     
     private var thumbnailURL: String? {
         didSet {
-            thumbnail.image = #imageLiteral(resourceName: "articlePlaceHolder_Image")
+            guard let url = URL(string: thumbnailURL ?? "") else {
+                return thumbnail.image = nil
+                
+            }
+            thumbnail.kf.setImage(with: url)
         }
     }
     
@@ -30,7 +35,7 @@ final class ArticleCell: UITableViewCell, NibReusable {
     }
     
     override func prepareForReuse() {
-        thumbnail.image = nil
+        thumbnailURL = nil
         dateLabel.text = nil
         title.text = nil
         body.text = nil
