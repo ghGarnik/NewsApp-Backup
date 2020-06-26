@@ -49,6 +49,17 @@ class ArticlesListViewController: UIViewController, AlertShowing {
         navigationItem.setRightBarButton(logoutButton, animated: false)
     }
     
+    
+    
+    @objc private func logout() {
+        viewModel?.didTapOnLogout()
+    }
+}
+
+//MARK: - TableView Setup
+
+extension ArticlesListViewController {
+    
     private func setupArticlesListTable() {
         articlesListTable.dataSource = self
         articlesListTable.delegate = self
@@ -58,13 +69,10 @@ class ArticlesListViewController: UIViewController, AlertShowing {
        
         articlesListTable.register(cellType: ArticleCell.self)
     }
-    
-    @objc private func logout() {
-        viewModel?.didTapOnLogout()
-    }
 }
 
 extension ArticlesListViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return articles.count
     }
@@ -85,6 +93,7 @@ extension ArticlesListViewController: UITableViewDataSource {
 }
 
 extension ArticlesListViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard articles.indices.contains(indexPath.row) else {
                 return

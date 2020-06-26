@@ -42,6 +42,7 @@
 		3E4CDE18249F81130090B41C /* LoginResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CDE17249F81130090B41C /* LoginResult.swift */; };
 		3E5ADB0B249F57220076C7E8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E5ADB0A249F57220076C7E8 /* LoginViewController.swift */; };
 		3E5ADB0D249F57360076C7E8 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E5ADB0C249F57360076C7E8 /* Login.storyboard */; };
+		3E6F1C3224A6817700F765D0 /* ArticleDetailCopies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F1C3124A6817700F765D0 /* ArticleDetailCopies.swift */; };
 		3E7851FC24A6650900CBD850 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7851FB24A6650900CBD850 /* ArticleDetailViewController.swift */; };
 		3E7851FE24A6652000CBD850 /* ArticleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7851FD24A6652000CBD850 /* ArticleDetail.storyboard */; };
 		3E78520024A6657400CBD850 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7851FF24A6657400CBD850 /* ArticleDetailViewModel.swift */; };
@@ -144,6 +145,7 @@
 		3E4CDE17249F81130090B41C /* LoginResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResult.swift; sourceTree = "<group>"; };
 		3E5ADB0A249F57220076C7E8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		3E5ADB0C249F57360076C7E8 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		3E6F1C3124A6817700F765D0 /* ArticleDetailCopies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailCopies.swift; sourceTree = "<group>"; };
 		3E7851FB24A6650900CBD850 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		3E7851FD24A6652000CBD850 /* ArticleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetail.storyboard; sourceTree = "<group>"; };
 		3E7851FF24A6657400CBD850 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
@@ -386,6 +388,14 @@
 			path = SessionManager;
 			sourceTree = "<group>";
 		};
+		3E6F1C3324A6818600F765D0 /* Copies */ = {
+			isa = PBXGroup;
+			children = (
+				3E6F1C3124A6817700F765D0 /* ArticleDetailCopies.swift */,
+			);
+			path = Copies;
+			sourceTree = "<group>";
+		};
 		3E7851F524A664A100CBD850 /* ArticleDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -401,6 +411,7 @@
 		3E7851F624A664B300CBD850 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E6F1C3324A6818600F765D0 /* Copies */,
 				3E7851FB24A6650900CBD850 /* ArticleDetailViewController.swift */,
 				3E7851FD24A6652000CBD850 /* ArticleDetail.storyboard */,
 			);
@@ -485,6 +496,7 @@
 		3E8A3E2F249F50B60001D366 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3E8AE86624A64963001E9ACA /* Styles */,
 				3EAC189B24A5F3D80070B3DC /* Cells */,
 				3E8A3E2B249F4E8B0001D366 /* Storyboarded.swift */,
 				3E484C5024A0F70B0082B14C /* CurrentFirstResponser.swift */,
@@ -616,7 +628,6 @@
 		3ECBC9EF24A5FA4000E1D76C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				3E8AE86624A64963001E9ACA /* Styles */,
 				3ECBC9EB24A5FA1E00E1D76C /* ArticleCell.swift */,
 				3ECBC9ED24A5FA3900E1D76C /* ArticleCell.xib */,
 			);
@@ -803,6 +814,7 @@
 				3EB1A33124A1506C009A62BD /* RetrieveSessionResult.swift in Sources */,
 				3E14DDD424A3B9FE00226E5F /* ArticlesListViewModel.swift in Sources */,
 				3E9FFD4A24A14C75004CBB84 /* RetrieveCredentialResult.swift in Sources */,
+				3E6F1C3224A6817700F765D0 /* ArticleDetailCopies.swift in Sources */,
 				3E78521924A66A4900CBD850 /* ArticleDetailRouter.swift in Sources */,
 				3E14DDD824A3BAB300226E5F /* ArticlesListRouterProtocol.swift in Sources */,
 				3E14DDDA24A3BAC900226E5F /* ArticlesListRouter.swift in Sources */,

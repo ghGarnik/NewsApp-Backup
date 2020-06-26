@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum CompactArticleStyle {
+enum ArticleStyle {
     case title
     case body
     case date
@@ -40,10 +40,12 @@ enum CompactArticleStyle {
     
     var numberOfLines: Int {
         switch self {
-        case .title, .date:
-            return 1
+        case .title:
+            return 2
         case .body:
             return 0
+        case .date:
+            return 1
         }
     }
     
@@ -59,7 +61,7 @@ enum CompactArticleStyle {
 }
 
 extension UILabel {
-    func applyStyle(_ style: CompactArticleStyle) {
+    func applyStyle(_ style: ArticleStyle) {
         self.font = style.font
         self.textColor = style.textColor
         self.numberOfLines = style.numberOfLines

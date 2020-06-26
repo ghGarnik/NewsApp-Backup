@@ -24,6 +24,7 @@ final class ArticleCell: UITableViewCell, NibReusable {
                 
             }
             thumbnail.kf.setImage(with: url)
+            thumbnail.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "thumbnailPlaceholder"))
         }
     }
     

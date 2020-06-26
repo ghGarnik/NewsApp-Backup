@@ -16,6 +16,7 @@ public struct ArticleDetail: Codable {
     let imageUrl: String
     let summary: String
     let title: String
+    let author: String = ArticleDetailCopies.author
     
     private enum CodingKeys: String, CodingKey {
         case content = "content"
