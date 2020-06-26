@@ -9,8 +9,9 @@
 import UIKit
 
 final public class LoginRouter: Storyboarded {
-    weak private var view: LoginViewController!
-    weak private var coordinator: Coordinator?
+    
+    private weak var view: LoginViewController!
+    private weak var coordinator: Coordinator?
     
     init(withView view: LoginViewController, coordinator: Coordinator) {
         self.view = view

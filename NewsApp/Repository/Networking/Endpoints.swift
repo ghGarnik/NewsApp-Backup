@@ -10,12 +10,15 @@ import Foundation
 
 public enum Endpoints {
     case login
+    case articlesList
     
     private var baseURL: String { return "https://mobilecodetest.fws.dev"}
     private var path: String {
         switch self {
         case .login:
             return "/auth/token"
+        case .articlesList:
+            return "/api/v1/articles"
         }
     }
     //MARK: - Full path Generation

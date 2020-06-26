@@ -36,8 +36,7 @@ public final class DefaultSessionManager: SessionManagerProtocol {
         let credential = Credential(type: .token, value: token)
         
         dependencies.credentialsStore.updateCredential(credential,
-                                                       completion: { [weak self] response in
-                                                        guard let self = self else { return }
+                                                       completion: {response in
                                                         
                                                         switch response {
                                                         case .success:
@@ -52,8 +51,7 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     /// - Parameter completion: Closure that manages response.
     public func retrieveSessionToken(completion: @escaping RetrieveSessionResponse<String>) {
         dependencies.credentialsStore.retrieveCredential(.token,
-                                                         completion: { [weak self] response in
-                                                            guard let self = self else { return }
+                                                         completion: {response in
                                                             
                                                             switch response {
                                                             case .success(let token):
@@ -78,9 +76,7 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     /// Retrieves if there is current session available.
     /// - Parameter completion: closure that manages rather the session is valid or not.
     public func isValidSession(completion: @escaping (Bool) -> ()) {
-        retrieveSessionToken(completion: { [weak self] result in
-            guard let self = self else { return }
-            
+        retrieveSessionToken(completion: { result in
             switch result {
             case .success:
                 completion(true)

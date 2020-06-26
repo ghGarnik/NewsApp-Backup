@@ -16,4 +16,5 @@ public protocol APIRequest: Encodable {
     var headers: Headers { get }
     var encoding: HTTPEncoding { get }
     var path: Path { get }
+    var auth: Bool  { get }
 }

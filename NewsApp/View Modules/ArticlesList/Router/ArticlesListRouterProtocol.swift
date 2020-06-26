@@ -1,5 +1,5 @@
 //
-//  NewsListRouterProtocol.swift
+//  ArticlesListRouterProtocol.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 24/06/2020.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol NewsListRouterProtocol {
+public protocol ArticlesListRouterProtocol {
+    func showError(_ message: String, completion: @escaping Action)
     func logoutDidSucceed()
-    func logoutDidFail(_: String)
 }

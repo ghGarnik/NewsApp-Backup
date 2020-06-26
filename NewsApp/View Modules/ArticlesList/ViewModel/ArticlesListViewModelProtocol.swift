@@ -1,5 +1,5 @@
 //
-//  NewsListCopies.swift
+//  ArticlesListViewModelProtocol.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 24/06/2020.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-public enum NewsListCopies {
-    static let logout = "Logout"
+protocol ArticlesListViewModelProtocol: class {
+    func viewDidLoad()
+    func didTapOnLogout()
 }

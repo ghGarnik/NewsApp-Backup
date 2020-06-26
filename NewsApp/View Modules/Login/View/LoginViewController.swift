@@ -12,11 +12,11 @@ class LoginViewController: UIViewController, AlertShowing {
     
     //MARK: - Outlets
     
-    @IBOutlet weak var userTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var headerImage: UIImageView!
-    @IBOutlet weak var loginScrollView: UIScrollView!
+    @IBOutlet private weak var userTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var headerImage: UIImageView!
+    @IBOutlet private weak var loginScrollView: UIScrollView!
     
     //MARK: - Binding
     
@@ -24,7 +24,7 @@ class LoginViewController: UIViewController, AlertShowing {
     
     //MARK: - ViewController Lifecycle
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         configureCaptions()

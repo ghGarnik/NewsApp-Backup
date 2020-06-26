@@ -15,6 +15,8 @@ public final class DefaultHTTPClient: HTTPClient {
     private enum Constants {
         static let defaultHeaders: Headers = ["accept": "application/json",
                                               "Content-Type": "application/json"]
+        static let bearer = "Bearer"
+        static let authorization = "Authorization"
     }
     
     private enum ErrorCaptions: String {
@@ -22,10 +24,12 @@ public final class DefaultHTTPClient: HTTPClient {
         case invalidResponse = "Invalid Server Response"
     }
     
+    private let dependencies: DefaultHTTPClientDependenciesProtocol
     private var session: URLSession
     private var activeRequest: URLSessionDataTask?
     
-    init() {
+    init(dependencies: DefaultHTTPClientDependenciesProtocol) {
+        self.dependencies = dependencies
         session = URLSession.shared
     }
     
@@ -35,20 +39,56 @@ public final class DefaultHTTPClient: HTTPClient {
     /// - Parameter request: Request to make
     /// - Parameter parameters: Parameters to include in the body.
     /// - Parameter completion: Closure to execute.
-    func execute<T: APIRequest>(_ request: T,
+    public func execute<T: APIRequest>(_ request: T,
                                 parameters: Parameters = nil,
                                 completion: @escaping NetworkResponse<T.Response>) {
-        
+        if request.auth {
+            dependencies.sessionManager.retrieveSessionToken { [weak self] result in
+                guard let self = self else { return }
+                switch result {
+                case .success(let token):
+                    self.doRequest(request,
+                                   parameters: parameters,
+                                   token: token,
+                                   completion: completion)
+                case .failure:
+                    completion(.failure(.forbidden))
+                }
+            }
+        } else {
+            self.doRequest(request,
+                           parameters: parameters,
+                           completion: completion)
+        }
+    }
+    
+    //MARK: - Private methods.
+    
+    
+    /// Makes HTTPRequest based on argument parameters.
+    /// - Parameter request: APIRequest object.
+    /// - Parameter parameters: Parameters to include in the body.
+    /// - Parameter token: JWT for requests that require to be authenticated.
+    /// - Parameter completion: Closure that manages result of the request.
+    private func doRequest<T: APIRequest>(_ request: T,
+                                          parameters: Parameters = nil,
+                                          token: String? = nil,
+                                          completion: @escaping NetworkResponse<T.Response>) {
         //Cancels previous request if exists. Just to avoid side effects.
         activeRequest?.cancel()
         
-        guard let urlRequest = configureUrlRequest(request, parameters: parameters) else {
+        //Creates URLRequest object based on request parameters.
+        guard let urlRequest = configureUrlRequest(request,
+                                                   parameters: parameters,
+                                                   token: token) else {
             completion(.failure(.networking(ErrorCaptions.invalidRequest.rawValue)))
             return
         }
         
         let task = session.dataTask(with: urlRequest, completionHandler: { [weak self] data, response, error in
             guard let self = self else { return }
+            
+            //Error Management
             
             guard let httpResponse = response as? HTTPURLResponse else {
                 completion(.failure(.unknownError))
@@ -69,6 +109,8 @@ public final class DefaultHTTPClient: HTTPClient {
                 return
             }
             
+            //Response decode
+            
             do {
                 let response = try JSONDecoder().decode(T.Response.self, from: data)
                 completion(.successful(response))
@@ -80,19 +122,22 @@ public final class DefaultHTTPClient: HTTPClient {
         activeRequest = task
     }
     
-    //MARK: - Private methods.
-    
     /// Returns a URLRequest based on request parameters.
     /// - Parameter request: APIRequest object.
     /// - Parameter parameters: Parameters to include in HTTPBody.
     private func configureUrlRequest<T: APIRequest>(_ request: T,
-                                                    parameters: Parameters?) -> URLRequest? {
+                                                    parameters: Parameters = nil,
+                                                    token: String?) -> URLRequest? {
         guard let url = URL(string: request.path) else { return nil }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
+        
         request.headers?.forEach { urlRequest.setValue($0.value, forHTTPHeaderField: $0.key) }
         Constants.defaultHeaders?.forEach { urlRequest.setValue($0.value, forHTTPHeaderField: $0.key) }
+        if let token = token {
+            urlRequest.setValue("\(Constants.bearer) \(token)", forHTTPHeaderField: Constants.authorization)
+        }
         
         if let parameters = parameters,
             let body = try? JSONSerialization.data(withJSONObject: parameters as Any, options: []) {

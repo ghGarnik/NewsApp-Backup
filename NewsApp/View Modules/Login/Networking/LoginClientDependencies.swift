@@ -14,6 +14,6 @@ protocol LoginClientDependenciesProtocol {
 }
 
 final class LoginClientDependencies: LoginClientDependenciesProtocol {
-    lazy var networkManager: HTTPClient = DefaultHTTPClient()
+    lazy var networkManager: HTTPClient = DefaultHTTPClient(dependencies: DefaultHTTPClientDependencies())
     lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
 }

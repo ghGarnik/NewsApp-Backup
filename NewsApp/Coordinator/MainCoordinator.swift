@@ -41,7 +41,7 @@ extension MainCoordinator: Coordinator {
             guard let self = self else { return }
             
             if isValid {
-                self.loadNewsList()
+                self.loadArticlesList()
             } else {
                 self.loadLoginScreen()
             }
@@ -53,7 +53,7 @@ extension MainCoordinator: Coordinator {
             guard let self = self else { return }
             
             if isValid {
-                self.loadNewsList()
+                self.loadArticlesList()
             } else {
                 self.loadLoginScreen()
             }
@@ -77,16 +77,16 @@ extension MainCoordinator {
     }
 }
 
-//MARK: - News List
+//MARK: - Articles List
 
 extension MainCoordinator {
-    private func loadNewsList() {
-        let newsListView = NewsListRouter.assembleModule(coordinator: self)
+    private func loadArticlesList() {
+        let articlesListView = ArticlesListRouter.assembleModule(coordinator: self)
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             
             let navigationController = UINavigationController()
-            navigationController.pushViewController(newsListView, animated: true)
+            navigationController.pushViewController(articlesListView, animated: true)
             navigationController.setNavigationBarHidden(false, animated: false)
             self.navigationController = navigationController
         }

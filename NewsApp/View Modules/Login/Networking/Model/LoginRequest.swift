@@ -16,6 +16,7 @@ final class LoginRequest: APIRequest {
     var method: HTTPMethods { return .post}
     var headers: Headers { return nil }
     var encoding: HTTPEncoding { return .jsonEncoding}
+    var auth: Bool { return false }
     
     init(path: Path) {
         self.path = path

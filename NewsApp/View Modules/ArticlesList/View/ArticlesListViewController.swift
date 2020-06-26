@@ -1,5 +1,5 @@
 //
-//  NewsListViewController.swift
+//  ArticlesListViewController.swift
 //  NewsApp
 //
 //  Created by HARUTYUNYAN LAPUSHNYAN Garnik on 24/06/2020.
@@ -8,17 +8,18 @@
 
 import UIKit
 
-class NewsListViewController: UIViewController, AlertShowing {
+class ArticlesListViewController: UIViewController, AlertShowing {
 
-    var viewModel: NewsListViewModelProtocol?
+    var viewModel: ArticlesListViewModelProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setLogoutButton()
+        viewModel?.viewDidLoad()
     }
     
     private func setLogoutButton() {
-        let logoutButton = UIBarButtonItem(title: NewsListCopies.logout, style: .plain, target: self, action: #selector(logout))
+        let logoutButton = UIBarButtonItem(title: ArticlesListCopies.logout, style: .plain, target: self, action: #selector(logout))
         navigationItem.setLeftBarButton(logoutButton, animated: false)
     }
     

@@ -8,21 +8,22 @@
 
 import UIKit
 
-protocol AlertShowing {
-    func alert(_ message: String?)
+public protocol AlertShowing {
+    func alert(_ message: String?, completion: Action?)
 }
 
 extension AlertShowing where Self: UIViewController {
     
     /// Shows an alert to the user.
     /// - Parameter message: Alert text.
-    func alert(_ message: String? = nil) {
+    public func alert(_ message: String?, completion: Action? = nil){
         let alert = UIAlertController(title: nil,
                                       message: message ?? CommonCopies.unknownAlert,
                                       preferredStyle: .alert)
         let alertAction = UIAlertAction(title: CommonCopies.ok,
                                         style: .default,
-                                        handler: nil)
+                                        handler: { _ in completion?()})
+        
         alert.view.layer.cornerRadius = 15
         
         DispatchQueue.main.async {
