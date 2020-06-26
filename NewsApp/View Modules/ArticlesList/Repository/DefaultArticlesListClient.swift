@@ -18,7 +18,7 @@ public class DefaultArticlesListClient {
 }
 
 extension DefaultArticlesListClient: ArticlesListClient {
-    public func retrieveArticles(completion: @escaping ArticlesClientResponse<ArticlesListResponse>) {
+    public func retrieveArticles(completion: @escaping ArticlesClientResponse<[CompactArticle]>) {
         let request = ArticlesListRequest(path: Endpoints.articlesList.url)
         dependencies.network.execute(request,
                                      parameters: nil) { response in

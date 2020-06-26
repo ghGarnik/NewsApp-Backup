@@ -9,3 +9,5 @@
 import Foundation
 
 public typealias Action = () -> ()
+
+public typealias TypedAction<T> = (T) -> ()

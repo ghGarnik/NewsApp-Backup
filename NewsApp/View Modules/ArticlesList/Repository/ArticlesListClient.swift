@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol ArticlesListClient {
-    func retrieveArticles(completion: @escaping ArticlesClientResponse<ArticlesListResponse>)
+    func retrieveArticles(completion: @escaping ArticlesClientResponse<[CompactArticle]>)
 }

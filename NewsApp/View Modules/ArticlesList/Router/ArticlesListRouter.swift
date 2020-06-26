@@ -38,6 +38,10 @@ extension ArticlesListRouter: ArticlesListRouterProtocol {
         view.alert(message, completion: completion)
     }
     
+    public func navigateToArticle(_ articleId: Int) {
+        debugPrint("Navigating to article id \(articleId)")
+    }
+    
     public func logoutDidSucceed() {
         coordinator?.logoutDidSucceed()
     }
