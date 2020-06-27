@@ -10,7 +10,7 @@ import Foundation
 
 final class ArticleDetailRequest: APIRequest {
     
-    typealias Response = ArticleDetail?
+    typealias Response = ArticleDetailResponse?
     
     let path: Path
     var method: HTTPMethods { return .get }

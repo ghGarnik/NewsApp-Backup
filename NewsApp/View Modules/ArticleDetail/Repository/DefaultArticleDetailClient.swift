@@ -18,7 +18,7 @@ public class DefaultArticleDetailClient {
 }
 
 extension DefaultArticleDetailClient: ArticleDetailClient {
-    public func article(forId id: Int, completion: @escaping ArticleDetailClientResponse<ArticleDetail>) {
+    public func article(forId id: Int, completion: @escaping ArticleDetailClientResponse<ArticleDetailResponse>) {
         let path = Endpoints.articlesList.url.appending(("/\(id)"))
         let request = ArticleDetailRequest(path: path)
         dependencies.network.execute(request,

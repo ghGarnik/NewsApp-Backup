@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol ArticleDetailClient {
-    func article(forId id: Int, completion: @escaping ArticleDetailClientResponse<ArticleDetail>)
+    func article(forId id: Int, completion: @escaping ArticleDetailClientResponse<ArticleDetailResponse>)
 }

@@ -32,12 +32,23 @@ extension ArticleDetailViewModel: ArticleDetailViewModelProtocol {
         dependencies.repository.article(forId: articleId) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let article):
+            case .success(let articleResponse):
+                let article = ArticleDetail(response: articleResponse)
                 self.articleDetail.value = article
             case .failure(let error):
                 self.manageError(error)
             }
         }
+    }
+    
+    public func didTapOnFavouriteButton(isFavourite: Bool) {
+        guard let currentState = articleDetail.value?.isFavourite,
+            currentState != isFavourite else {
+                return
+        }
+        
+        articleDetail.value?.isFavourite = isFavourite
+        //TODO: Change on Favourites Repository
     }
 
 }

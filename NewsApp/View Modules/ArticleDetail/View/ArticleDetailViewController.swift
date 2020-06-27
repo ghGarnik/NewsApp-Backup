@@ -69,8 +69,35 @@ extension ArticleDetailViewController {
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
             self.titleLabel.text = articleDetail.title
-            self.authorLabel.text = articleDetail.author.appending(" - \(articleDetail.date)")
+            self.authorLabel.text = articleDetail.author
             self.contentLabel.text = articleDetail.content
+            self.setupFavouriteButton(isFavourite: articleDetail.isFavourite)
         }
+    }
+}
+
+//MARK: - Favourite Button
+
+extension ArticleDetailViewController {
+    
+    /// Manages what happens when receives tap action from FavouriteButton
+    /// - Parameter isFavourite: Favourite Button new isFavourite value after tapping.
+    private func favouriteButtonDidChange(to isFavourite: Bool) {
+        viewModel?.didTapOnFavouriteButton(isFavourite: isFavourite)
+    }
+    
+    /// Creates a Favourite Button in Navigation Bar with model value.
+    /// - Parameter isFavourite: Article isFavourite value
+    private func setupFavouriteButton(isFavourite: Bool) {
+        let navigationHeight = navigationController?.navigationBar.frame.height ?? 0.0
+        let frameForButton = CGRect(x: 0, y: 0, width: navigationHeight, height: navigationHeight)
+        let favouriteButtonView = FavouriteButton(frame: frameForButton)
+        
+        favouriteButtonView.isFavourite = isFavourite
+        favouriteButtonView.completion = favouriteButtonDidChange
+        
+        let favouriteButton = UIBarButtonItem(customView: favouriteButtonView)
+        navigationItem.setRightBarButton(favouriteButton,
+                                         animated: false)
     }
 }
