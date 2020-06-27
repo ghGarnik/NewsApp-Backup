@@ -33,8 +33,7 @@ extension ArticleDetailViewModel: ArticleDetailViewModelProtocol {
             guard let self = self else { return }
             switch result {
             case .success(let articleResponse):
-                let article = ArticleDetail(response: articleResponse)
-                self.articleDetail.value = article
+                self.updateArticleDetail(articleResponse)
             case .failure(let error):
                 self.manageError(error)
             }
@@ -42,21 +41,51 @@ extension ArticleDetailViewModel: ArticleDetailViewModelProtocol {
     }
     
     public func didTapOnFavouriteButton(isFavourite: Bool) {
-        guard let currentState = articleDetail.value?.isFavourite,
-            currentState != isFavourite else {
+        guard let currentArticle = articleDetail.value,
+            currentArticle.isFavourite != isFavourite else {
                 return
         }
         
-        articleDetail.value?.isFavourite = isFavourite
-        //TODO: Change on Favourites Repository
+        if isFavourite {
+            dependencies.favoritesPersistence.saveFavorite(id: currentArticle.id) { [weak self] _ in
+                guard let self = self else { return }
+                self.updateArticleFavorite(isFavourite: isFavourite)
+            }
+        } else {
+            dependencies.favoritesPersistence.removeFavorite(id: currentArticle.id) { [weak self] _ in
+                guard let self = self else { return }
+                self.updateArticleFavorite(isFavourite: isFavourite)
+            }
+        }
     }
 
+}
+
+//MARK: - Update Article
+
+extension ArticleDetailViewModel {
+    
+    /// Updates article detail adding isFavorite property to server Response.
+    /// - Parameter articleResponse: ArticleDetail  response.
+    private func updateArticleDetail(_ articleResponse: ArticleDetailResponse) {
+        var article = ArticleDetail(response: articleResponse)
+        dependencies.favoritesPersistence.isFavorite(id: articleResponse.id) { [weak self] isFavorite in
+            guard let self = self else { return }
+            article.isFavourite = isFavorite
+            self.articleDetail.value = article
+        }
+    }
+    
+    /// Updates current article detail isFavorite value.
+    /// - Parameter isFavourite: new isFavorite value.
+    private func updateArticleFavorite(isFavourite: Bool) {
+        articleDetail.value?.isFavourite = isFavourite
+    }
 }
 
 //MARK: - Error Managing
 
 extension ArticleDetailViewModel {
-    
     
     /// Manages repository fetching error.
     /// - Parameter error: Repository error.

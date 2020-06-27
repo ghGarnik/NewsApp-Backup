@@ -11,9 +11,11 @@ import Foundation
 public protocol ArticleDetailViewModelDependenciesProtocol {
     var repository: ArticleDetailClient { get }
     var sessionManager: SessionManagerProtocol { get }
+    var favoritesPersistence: FavoritesPersistenceProtocol { get }
 }
 
 public final class ArticleDetailViewModelDependencies: ArticleDetailViewModelDependenciesProtocol {
     public lazy var repository: ArticleDetailClient = DefaultArticleDetailClient(dependencies: DefaultArticleDetailClientDependencies())
     public lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
+    public lazy var favoritesPersistence: FavoritesPersistenceProtocol = FavoritesPersistence(dependencies: FavoritesPersistenceDependencies())
 }

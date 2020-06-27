@@ -12,10 +12,12 @@ import Foundation
 
 public protocol DefaultSessionManagerDependenciesProtocol {
     var credentialsStore: CredentialsStore { get }
+    var cacheManager: CacheManagerProtocol{ get }
 }
 
 public class DefaultSessionManagerDependencies: DefaultSessionManagerDependenciesProtocol {
     public lazy var credentialsStore: CredentialsStore = DefaultCredentialsStore()
+    public lazy var cacheManager: CacheManagerProtocol = CacheManager(dependencies: CacheManagerDependencies())
 }
 
 
@@ -68,8 +70,10 @@ public final class DefaultSessionManager: SessionManagerProtocol {
     }
     
     public func removeCurrentToken(completion: @escaping SimpleResponse) {
-        dependencies.credentialsStore.removeCredential(.token, completion: { response in
+        dependencies.credentialsStore.removeCredential(.token, completion: { [weak self] response in
+            guard let self = self else { return }
             completion(response)
+            self.dependencies.cacheManager.wipeAppCache()
         })
     }
     
