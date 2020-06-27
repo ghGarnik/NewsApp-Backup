@@ -8,12 +8,12 @@
 
 import Foundation
 
-public protocol ArticlesListViewModelDependenciesProtocol {
+protocol ArticlesListViewModelDependenciesProtocol {
     var sessionManager: SessionManagerProtocol { get }
     var articlesRepository: ArticlesListClient { get }
 }
 
-public class ArticlesListViewModelDependencies: ArticlesListViewModelDependenciesProtocol {
-    public lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
-    public lazy var articlesRepository: ArticlesListClient = DefaultArticlesListClient(dependencies: DefaultArticlesListClientDependencies())
+final class ArticlesListViewModelDependencies: ArticlesListViewModelDependenciesProtocol {
+    lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
+    lazy var articlesRepository: ArticlesListClient = DefaultArticlesListClient(dependencies: DefaultArticlesListClientDependencies())
 }

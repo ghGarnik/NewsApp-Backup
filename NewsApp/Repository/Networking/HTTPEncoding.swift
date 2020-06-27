@@ -8,6 +8,6 @@
 
 import Foundation
 
-public enum HTTPEncoding {
+enum HTTPEncoding {
     case jsonEncoding
 }

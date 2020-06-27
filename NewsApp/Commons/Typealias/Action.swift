@@ -8,6 +8,5 @@
 
 import Foundation
 
-public typealias Action = () -> ()
-
-public typealias TypedAction<T> = (T) -> ()
+typealias Action = () -> ()
+typealias TypedAction<T> = (T) -> ()

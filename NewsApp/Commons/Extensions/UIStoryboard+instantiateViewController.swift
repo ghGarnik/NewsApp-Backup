@@ -9,11 +9,11 @@
 import UIKit
 
 extension UIStoryboard {
-    
+
     convenience init(name: String) {
         self.init(name: name, bundle: nil)
     }
-    
+
     /// Provides a UIViewcontroller based in Storyboard identifier
     func instantiateViewController<T: UIViewController>() -> T {
         let identifier = String(describing: T.self)

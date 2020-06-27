@@ -18,13 +18,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
+
         coordinator = MainCoordinator(dependencies: MainCoordinatorDependencies(), changeNavigationControllerCompletion: { [weak self] navigationController in
             guard let self = self else { return }
-            
+
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return }
-                
+
                 // If already does exist a window, switches between navigation controllers with animation.
                 if let currentWindow = self.window {
                     currentWindow.rootViewController = navigationController
@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                       completion: nil)
 
                 }
-                
+
                 // Id don't, it creates a new window.
                 else {
                     let window = UIWindow(windowScene: windowScene)
@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 }
             }
         })
-        
+
         coordinator?.start()
     }
 

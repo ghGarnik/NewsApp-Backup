@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ArticlesListCopies {
+enum ArticlesListCopies {
     static let logout = "Logout"
     static let listTitle = "Articles"
 }

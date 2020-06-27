@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol ArticleDetailClient {
+protocol ArticleDetailClient {
     func article(forId id: Int, completion: @escaping ArticleDetailClientResponse<ArticleDetailResponse>)
 }

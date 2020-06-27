@@ -17,7 +17,7 @@ public class LoginClient {
     //private let currentQueue: OperationQueue
     private let baseURL: String
     private let sessionManager: SessionManager
-    
+
     public init(baseURL: String,
                 sessionManager: SessionManager = DefaultSessionManager()) {
         self.baseURL = baseURL

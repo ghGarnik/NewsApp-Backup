@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum ArticleDetailClientResult<Value> {
+enum ArticleDetailClientResult<Value> {
     case success(Value)
     case failure(ArticleDetailClientError)
 }
 
-public typealias ArticleDetailClientResponse<Value> = (ArticleDetailClientResult<Value>) -> ()
+typealias ArticleDetailClientResponse<Value> = (ArticleDetailClientResult<Value>) -> ()

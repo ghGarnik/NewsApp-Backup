@@ -9,17 +9,17 @@
 import Foundation
 
 final class LoginRequest: APIRequest {
-    
+
     typealias Response = LoginResponse?
-    
+
     let path: Path
     var method: HTTPMethods { return .post}
     var headers: Headers { return nil }
     var encoding: HTTPEncoding { return .jsonEncoding}
     var auth: Bool { return false }
-    
+
     init(path: Path) {
         self.path = path
     }
-    
+
 }

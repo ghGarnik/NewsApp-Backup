@@ -8,26 +8,26 @@
 
 import UIKit
 
-public protocol MainCoordinatorDependenciesProtocol {
+protocol MainCoordinatorDependenciesProtocol {
     var sessionManager: SessionManagerProtocol { get }
 }
 
-public class MainCoordinatorDependencies: MainCoordinatorDependenciesProtocol {
-    lazy public var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
+final class MainCoordinatorDependencies: MainCoordinatorDependenciesProtocol {
+    lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
 }
 
-public class MainCoordinator {
-    
+final class MainCoordinator {
+
     private let dependencies: MainCoordinatorDependenciesProtocol
     private let changeNavigationControllerCompletion: (UINavigationController) -> ()
-    public var navigationController: UINavigationController? {
+    var navigationController: UINavigationController? {
         didSet {
             guard let navigationController = navigationController else { return }
             changeNavigationControllerCompletion(navigationController)
         }
     }
-    
-    public init(dependencies: MainCoordinatorDependenciesProtocol, changeNavigationControllerCompletion: @escaping (UINavigationController) -> ()) {
+
+    init(dependencies: MainCoordinatorDependenciesProtocol, changeNavigationControllerCompletion: @escaping (UINavigationController) -> ()) {
         self.dependencies = dependencies
         self.changeNavigationControllerCompletion = changeNavigationControllerCompletion
     }
@@ -36,10 +36,10 @@ public class MainCoordinator {
 //MARK: - Coordinator
 
 extension MainCoordinator: Coordinator {
-    public func start() {
+    func start() {
         dependencies.sessionManager.isValidSession(completion: { [weak self] isValid in
             guard let self = self else { return }
-            
+
             if isValid {
                 self.loadArticlesList()
             } else {
@@ -47,11 +47,11 @@ extension MainCoordinator: Coordinator {
             }
         })
     }
-    
-    public func loginDidSucceed() {
+
+    func loginDidSucceed() {
         dependencies.sessionManager.isValidSession(completion: { [weak self] isValid in
             guard let self = self else { return }
-            
+
             if isValid {
                 self.loadArticlesList()
             } else {
@@ -59,12 +59,12 @@ extension MainCoordinator: Coordinator {
             }
         })
     }
-    
-    public func logoutDidSucceed() {
+
+    func logoutDidSucceed() {
         loadLoginScreen()
     }
-    
-    public func openArticle(withId id: Int) {
+
+    func openArticle(withId id: Int) {
         loadArticleDetail(articleId: id)
     }
 }
@@ -91,7 +91,7 @@ extension MainCoordinator {
         let articlesListView = ArticlesListRouter.assembleModule(coordinator: self)
         DispatchQueue.main.async { [weak self] in
             guard let self = self else { return }
-            
+
             let navigationController = UINavigationController()
             navigationController.pushViewController(articlesListView, animated: true)
             navigationController.setNavigationBarHidden(false, animated: false)
@@ -103,16 +103,16 @@ extension MainCoordinator {
 //MARK: - Article Detail
 
 extension MainCoordinator {
-    public func loadArticleDetail(articleId id: Int) {
+    private func loadArticleDetail(articleId id: Int) {
         let articleDetailView = ArticleDetailRouter.assembleModule(coordinator: self,
                                                                    articleId: id)
         DispatchQueue.main.async { [weak self] in
             guard let self = self,
-                let navigationController = self.navigationController  else 
+                let navigationController = self.navigationController  else
             {
                 return
             }
-            
+
             navigationController.pushViewController(articleDetailView, animated: true)
             navigationController.setNavigationBarHidden(false, animated: false)
         }

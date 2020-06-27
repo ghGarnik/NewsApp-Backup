@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ArticlesListRouterProtocol {
+protocol ArticlesListRouterProtocol {
     func showMessage(_ message: String, completion: @escaping Action)
     func navigateToArticle(_: Int)
     func logoutDidSucceed()

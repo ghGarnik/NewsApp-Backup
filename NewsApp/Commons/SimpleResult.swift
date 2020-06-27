@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum SimpleResult {
+enum SimpleResult {
     case success
     case error
 }
 
-public typealias SimpleResponse = (SimpleResult) -> ()
+typealias SimpleResponse = (SimpleResult) -> ()

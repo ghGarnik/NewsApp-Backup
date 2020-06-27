@@ -11,23 +11,23 @@ import UIKit
 
 
 final class FavouriteButton: TouchableView {
-        
+
     var isFavourite: Bool? {
         didSet {
             guard let isFavourite = isFavourite else { return }
             let state: FavouriteButtonState = isFavourite ? .buttonOn : .buttonOff
-            
+
             changeImage(forState: state)
             if let completion = completion {
                 completion(isFavourite)
             }
         }
     }
-    
+
     var completion: TypedAction<Bool>?
 
     @IBOutlet private weak var buttonImage: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         commonInit()
@@ -42,7 +42,7 @@ final class FavouriteButton: TouchableView {
         super.init(frame: frame)
         commonInit()
     }
-    
+
     private func commonInit() {
         loadNibForUIView()
         configureView()
@@ -68,7 +68,7 @@ extension FavouriteButton {
 extension FavouriteButton {
     private func changeImage(forState state: FavouriteButtonState ) {
         let favouriteImageName = state.imageName
-        
+
         guard let favouriteImage = UIImage(named: favouriteImageName)?.withRenderingMode(.alwaysOriginal) else { return }
         buttonImage.image = favouriteImage
     }

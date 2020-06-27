@@ -12,7 +12,7 @@ enum ArticleStyle {
     case title
     case body
     case date
-    
+
     var textColor: UIColor {
         switch self {
         case .title:
@@ -23,7 +23,7 @@ enum ArticleStyle {
             return .lightGray
         }
     }
-    
+
     var font: UIFont {
         switch self {
         case .title:
@@ -37,7 +37,7 @@ enum ArticleStyle {
             size: 10)
         }
     }
-    
+
     var numberOfLines: Int {
         switch self {
         case .title:
@@ -48,7 +48,7 @@ enum ArticleStyle {
             return 1
         }
     }
-    
+
     var textAlignment: NSTextAlignment {
         switch self {
         case .title, .body:

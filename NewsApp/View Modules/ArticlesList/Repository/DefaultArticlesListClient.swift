@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class DefaultArticlesListClient {
-    
+final class DefaultArticlesListClient {
+
     private let dependencies: DefaultArticlesListClientDependenciesProtocol
-    
-    public init(dependencies: DefaultArticlesListClientDependenciesProtocol) {
+
+    init(dependencies: DefaultArticlesListClientDependenciesProtocol) {
         self.dependencies = dependencies
     }
 }
 
 extension DefaultArticlesListClient: ArticlesListClient {
-    public func retrieveArticles(completion: @escaping ArticlesClientResponse<[CompactArticle]>) {
+    func retrieveArticles(completion: @escaping ArticlesClientResponse<[CompactArticle]>) {
         let request = ArticlesListRequest(path: Endpoints.articlesList.url)
         dependencies.network.execute(request,
                                      parameters: nil) { response in

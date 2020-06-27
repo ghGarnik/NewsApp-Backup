@@ -8,10 +8,10 @@
 
 import Foundation
 
-public enum Endpoints {
+enum Endpoints {
     case login
     case articlesList
-    
+
     private var baseURL: String { return "https://mobilecodetest.fws.dev"}
     private var path: String {
         switch self {
@@ -22,7 +22,7 @@ public enum Endpoints {
         }
     }
     //MARK: - Full path Generation
-    
+
     var url: String {
         return baseURL.appending(self.path)
     }

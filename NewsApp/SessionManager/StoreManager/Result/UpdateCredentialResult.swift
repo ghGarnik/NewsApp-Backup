@@ -9,9 +9,9 @@
 
 import Foundation
 
-public enum UpdateCredentialResult {
+enum UpdateCredentialResult {
     case success
     case failure(CredentialsStoreError)
 }
 
-public typealias UpdateCredentialResponse = (UpdateCredentialResult) -> ()
+typealias UpdateCredentialResponse = (UpdateCredentialResult) -> ()

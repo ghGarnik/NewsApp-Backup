@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ArticleDetailRouterProtocol {
+protocol ArticleDetailRouterProtocol {
     func showMessage(_ message: String, completion: @escaping Action)
     func logoutDidSucceed()
 }

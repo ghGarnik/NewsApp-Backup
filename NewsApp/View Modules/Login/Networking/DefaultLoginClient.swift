@@ -10,24 +10,24 @@ import Foundation
 
 class DefaultLoginClient: LoginClient {
     private let dependencies: LoginClientDependenciesProtocol
-    
+
     init(dependencies: LoginClientDependenciesProtocol) {
         self.dependencies = dependencies
     }
-    
-    
+
+
     /// Logs in with user credentials.
     /// - Parameter loginCredentials: user credentials.
     /// - Parameter completion: LoginCLientResponse that will handle success and error.
     func login(_ loginCredentials: LoginCredentials, completion: @escaping LoginClientResponse) {
         let url = Endpoints.login.url
         let request = LoginRequest(path: url)
-        
+
         dependencies.networkManager.execute(request,
                                             parameters: loginCredentials.toParammeters(),
                                             completion: { [weak self] response in
                                                 guard let self = self else { return }
-                                                
+
                                                 switch response {
                                                 case .successful(let fetchedData):
                                                     self.loginDidSucceed(with: fetchedData?.accessToken ?? "", completion: completion)
@@ -37,7 +37,7 @@ class DefaultLoginClient: LoginClient {
                                                 }
         })
     }
-    
+
     private func loginDidSucceed(with token: String, completion: @escaping LoginClientResponse) {
         dependencies.sessionManager.saveSessionToken(token, completion: { result in
             switch result {
@@ -45,13 +45,13 @@ class DefaultLoginClient: LoginClient {
                 completion(.successful)
             case .error:
                 completion(.failure(CommonCopies.appError))
-                
+
             }
         })
         print("login successful: \n accessToken \(token)")
     }
-    
-    
+
+
     /// Converts networking error into intelligible text for the user.
     /// - Parameter error: Networking produced error-
     private func messageForError(_ error: NetworkingError) -> String {

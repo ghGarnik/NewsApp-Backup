@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol CacheManagerProtocol {
+protocol CacheManagerProtocol {
     func wipeAppCache()
 }

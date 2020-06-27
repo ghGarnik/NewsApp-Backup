@@ -11,11 +11,11 @@ import Foundation
 final class FavoritesPersistence {
     private let dependencies: FavoritesPersistenceDependenciesProtocol
     private let isFavoriteKey: String
-    
+
     private enum Constants {
         static let isFavoritePath = ".isFavorite"
     }
-    
+
     init(dependencies: FavoritesPersistenceDependenciesProtocol) {
         self.dependencies = dependencies
         self.isFavoriteKey = dependencies.bundle.description.appending(Constants.isFavoritePath)
@@ -29,16 +29,16 @@ extension FavoritesPersistence: FavoritesPersistenceProtocol {
             completion(.success)
             return
         }
-        
+
         if favorites.contains(id) {
             completion(.success)
         }
-        
+
         self.favorites?.append(id)
         completion(.success)
-        
+
     }
-    
+
     func removeFavorite(id: Int, completion: (SimpleResult) -> ()) {
         guard let favorites = favorites,
             favorites.contains(id) else {
@@ -47,13 +47,13 @@ extension FavoritesPersistence: FavoritesPersistenceProtocol {
         }
         self.favorites = favorites.filter { $0 != id }
     }
-    
+
     func isFavorite(id: Int, completion: (Bool) -> ()) {
         guard let favorites = favorites else {
             completion(false)
             return
         }
-        
+
         completion(favorites.contains(id))
     }
 }

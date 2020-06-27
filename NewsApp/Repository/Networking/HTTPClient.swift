@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol HTTPClient: class {
+protocol HTTPClient: class {
     func execute<T: APIRequest>(_ request: T,
                                 parameters: Parameters,
                                 completion: @escaping NetworkResponse<T.Response>)

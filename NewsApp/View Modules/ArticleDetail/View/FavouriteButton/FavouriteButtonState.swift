@@ -8,16 +8,16 @@
 
 import Foundation
 
-public enum FavouriteButtonState {
-       case buttonOn
-       case buttonOff
-       
-       var imageName: String {
-           switch self {
-           case .buttonOn:
-               return "favIconOn"
-           case .buttonOff:
-               return "favIconOff"
-           }
-       }
-   }
+enum FavouriteButtonState {
+    case buttonOn
+    case buttonOff
+
+    var imageName: String {
+        switch self {
+        case .buttonOn:
+            return "favIconOn"
+        case .buttonOff:
+            return "favIconOff"
+        }
+    }
+}

@@ -8,6 +8,6 @@
 
 import Foundation
 
-public protocol ArticlesListClient {
+protocol ArticlesListClient {
     func retrieveArticles(completion: @escaping ArticlesClientResponse<[CompactArticle]>)
 }

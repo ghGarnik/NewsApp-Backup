@@ -13,6 +13,6 @@ protocol ImagesCacheDependenciesProtocol {
     var imageCache: ImageCache { get }
 }
 
-public final class ImagesCacheDependencies: ImagesCacheDependenciesProtocol {
+final class ImagesCacheDependencies: ImagesCacheDependenciesProtocol {
     lazy var imageCache: ImageCache = ImageCache.default
 }

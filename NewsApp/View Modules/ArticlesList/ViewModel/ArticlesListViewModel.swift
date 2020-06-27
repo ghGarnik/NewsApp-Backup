@@ -10,14 +10,14 @@ import Foundation
 
 //MARK: - Implementation
 
-public class ArticlesListViewModel {
-    
+final class ArticlesListViewModel {
+
     private let dependencies: ArticlesListViewModelDependenciesProtocol
     private let router: ArticlesListRouterProtocol
-    
+
     var articles: Observable<[CompactArticle]> = Observable([])
-    
-    public init(dependencies: ArticlesListViewModelDependenciesProtocol, router: ArticlesListRouterProtocol) {
+
+    init(dependencies: ArticlesListViewModelDependenciesProtocol, router: ArticlesListRouterProtocol) {
         self.dependencies = dependencies
         self.router = router
     }
@@ -37,15 +37,15 @@ extension ArticlesListViewModel: ArticlesListViewModelProtocol {
             }
         }
     }
-    
+
     func didTapOnArticle(_ article: Int) {
         router.navigateToArticle(article)
     }
-    
+
     func didTapOnLogout() {
         dependencies.sessionManager.removeCurrentToken(completion: { [weak self] response in
             guard let self = self else { return }
-            
+
             switch response {
             case .success:
                 self.router.logoutDidSucceed()

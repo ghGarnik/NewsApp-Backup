@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol DefaultArticlesListClientDependenciesProtocol {
+protocol DefaultArticlesListClientDependenciesProtocol {
     var network: HTTPClient { get }
 }
 
-public final class DefaultArticlesListClientDependencies: DefaultArticlesListClientDependenciesProtocol {
-    public lazy var network: HTTPClient = DefaultHTTPClient(dependencies: DefaultHTTPClientDependencies())
+final class DefaultArticlesListClientDependencies: DefaultArticlesListClientDependenciesProtocol {
+    lazy var network: HTTPClient = DefaultHTTPClient(dependencies: DefaultHTTPClientDependencies())
 }

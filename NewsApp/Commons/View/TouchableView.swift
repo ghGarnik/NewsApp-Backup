@@ -15,7 +15,7 @@ class TouchableView: UIView {
             self?.transform = CGAffineTransform.identity.scaledBy(x: 0.97, y: 0.97)
         }
     }
-    
+
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         endingAnimation()

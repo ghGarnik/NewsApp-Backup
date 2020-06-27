@@ -8,14 +8,14 @@
 
 import Foundation
 
-public final class ArticleDetailViewModel {
-    
+final class ArticleDetailViewModel {
+
     private let dependencies: ArticleDetailViewModelDependenciesProtocol
     private let router: ArticleDetailRouterProtocol
     private let articleId: Int
-    
-    public var articleDetail: Observable<ArticleDetail?> = Observable(nil)
-    
+
+    var articleDetail: Observable<ArticleDetail?> = Observable(nil)
+
     init(dependencies: ArticleDetailViewModelDependenciesProtocol,
          router: ArticleDetailRouterProtocol,
          articleId: Int) {
@@ -28,7 +28,7 @@ public final class ArticleDetailViewModel {
 //MARK: - Protocol
 
 extension ArticleDetailViewModel: ArticleDetailViewModelProtocol {
-    public func viewDidLoad() {
+    func viewDidLoad() {
         dependencies.repository.article(forId: articleId) { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -39,13 +39,13 @@ extension ArticleDetailViewModel: ArticleDetailViewModelProtocol {
             }
         }
     }
-    
-    public func didTapOnFavouriteButton(isFavourite: Bool) {
+
+    func didTapOnFavouriteButton(isFavourite: Bool) {
         guard let currentArticle = articleDetail.value,
             currentArticle.isFavourite != isFavourite else {
                 return
         }
-        
+
         if isFavourite {
             dependencies.favoritesPersistence.saveFavorite(id: currentArticle.id) { [weak self] _ in
                 guard let self = self else { return }
@@ -64,7 +64,7 @@ extension ArticleDetailViewModel: ArticleDetailViewModelProtocol {
 //MARK: - Update Article
 
 extension ArticleDetailViewModel {
-    
+
     /// Updates article detail adding isFavorite property to server Response.
     /// - Parameter articleResponse: ArticleDetail  response.
     private func updateArticleDetail(_ articleResponse: ArticleDetailResponse) {
@@ -75,7 +75,7 @@ extension ArticleDetailViewModel {
             self.articleDetail.value = article
         }
     }
-    
+
     /// Updates current article detail isFavorite value.
     /// - Parameter isFavourite: new isFavorite value.
     private func updateArticleFavorite(isFavourite: Bool) {
@@ -86,7 +86,7 @@ extension ArticleDetailViewModel {
 //MARK: - Error Managing
 
 extension ArticleDetailViewModel {
-    
+
     /// Manages repository fetching error.
     /// - Parameter error: Repository error.
     private func manageError(_ error: ArticleDetailClientError) {
@@ -103,11 +103,11 @@ extension ArticleDetailViewModel {
             }
         }
     }
-    
+
     private func logout() {
         dependencies.sessionManager.removeCurrentToken(completion: { [weak self] response in
             guard let self = self else { return }
-            
+
             switch response {
             case .success:
                 self.router.logoutDidSucceed()

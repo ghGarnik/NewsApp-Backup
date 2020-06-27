@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol ArticleDetailViewModelProtocol {
+protocol ArticleDetailViewModelProtocol {
     var articleDetail: Observable<ArticleDetail?> { get set }
     func viewDidLoad()
     func didTapOnFavouriteButton(isFavourite: Bool)

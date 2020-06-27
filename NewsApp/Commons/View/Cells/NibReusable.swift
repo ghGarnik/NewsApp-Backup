@@ -16,7 +16,7 @@ extension NibReusable {
     static var nib: UINib {
         return UINib(nibName: reuseIdentifier, bundle: nil)
     }
-    
+
     func initFromNib<T: NibReusable>(cellType: T.Type) -> UIView? {
         return cellType.nib.instantiate(withOwner: self, options: nil).first as? UIView
     }

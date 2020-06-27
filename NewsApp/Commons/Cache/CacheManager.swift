@@ -8,17 +8,17 @@
 
 import Foundation
 
-public final class CacheManager {
-    
+final class CacheManager {
+
     private let dependencies: CacheManagerDependenciesProtocol
-    
+
     init(dependencies: CacheManagerDependenciesProtocol) {
         self.dependencies = dependencies
     }
 }
 
 extension CacheManager: CacheManagerProtocol {
-    public func wipeAppCache() {
+    func wipeAppCache() {
         dependencies.cached.forEach { $0.clearCache() }
     }
 }

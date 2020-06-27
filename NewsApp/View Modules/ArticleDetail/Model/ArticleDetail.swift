@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct ArticleDetail {
-    
+struct ArticleDetail {
+
     let content: String
     let id: Int
     let imageUrl: String
@@ -17,14 +17,14 @@ public struct ArticleDetail {
     let title: String
     let author: String
     var isFavourite: Bool = false
-    
+
     init(response: ArticleDetailResponse) {
         content = response.content
         id = response.id
         imageUrl = response.imageUrl
         summary = response.summary
         title = response.title
-        
+
         let date = response.date.replacingOccurrences(of: "-", with: "/")
         author = ArticleDetailCopies.author.appending(" - \(date)")
     }

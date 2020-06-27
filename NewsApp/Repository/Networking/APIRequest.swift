@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol APIRequest: Encodable {
-    
+protocol APIRequest: Encodable {
+
     associatedtype Response: Decodable
-    
+
     var method: HTTPMethods { get }
     var headers: Headers { get }
     var encoding: HTTPEncoding { get }

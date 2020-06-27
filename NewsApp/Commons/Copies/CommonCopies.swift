@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum CommonCopies {
+enum CommonCopies {
     static let unknownAlert = "Something went wrong. Please try again in a while"
     static let ok = "OK"
 }

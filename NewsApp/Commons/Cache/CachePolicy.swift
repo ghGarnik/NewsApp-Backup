@@ -10,6 +10,6 @@ import Foundation
 
 
 //To be implemented by any class that caches any data.
-public protocol CachePolicy {
+protocol CachePolicy {
     func clearCache()
 }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-public enum CredentialType: String {
+enum CredentialType: String {
     case token = "sessionToken"
 }
 
-public struct Credential {
+struct Credential {
     let type: CredentialType
     let value: String
 }

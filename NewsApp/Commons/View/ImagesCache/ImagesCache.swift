@@ -10,7 +10,7 @@ import Foundation
 
 final class ImagesCache {
     private let dependencies: ImagesCacheDependenciesProtocol
-    
+
     init(dependencies: ImagesCacheDependenciesProtocol) {
         self.dependencies = dependencies
     }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum RetrieveCredentialResult<Value> {
+enum RetrieveCredentialResult<Value> {
     case success(Value)
     case failure(CredentialsStoreError)
 }
 
-public typealias RetrieveCredentialResponse<Value> = (RetrieveCredentialResult<Value> ) -> ()
+typealias RetrieveCredentialResponse<Value> = (RetrieveCredentialResult<Value> ) -> ()

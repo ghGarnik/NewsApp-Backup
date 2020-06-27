@@ -8,14 +8,14 @@
 
 import Foundation
 
-public struct CompactArticle: Codable {
-    
+struct CompactArticle: Codable {
+
     let date: String
     let title: String
     let summary: String
     let id: Int
     let thumbnailURL: String
-    
+
     private enum CodingKeys: String, CodingKey {
         case date = "date"
         case title = "title"

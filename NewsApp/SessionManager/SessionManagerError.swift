@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum SessionManagerError {
+enum SessionManagerError {
     case tokenNotFound
     case technical
 }

@@ -8,8 +8,8 @@
 
 import Foundation
 
-public struct ArticleDetailResponse: Codable {
-    
+struct ArticleDetailResponse: Codable {
+
     let content: String
     let date: String
     let id: Int
@@ -17,7 +17,7 @@ public struct ArticleDetailResponse: Codable {
     let summary: String
     let title: String
     let author: String = ArticleDetailCopies.author
-    
+
     private enum CodingKeys: String, CodingKey {
         case content = "content"
         case date = "date"

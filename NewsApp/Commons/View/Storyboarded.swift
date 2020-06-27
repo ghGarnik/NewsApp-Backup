@@ -8,26 +8,26 @@
 
 import UIKit
 
-public protocol Storyboarded: class {
-    
+protocol Storyboarded: class {
+
     static var storyboardName: String { get }
     static var storyboard: UIStoryboard { get }
     static func viewControllerFromStoryboard() -> UIViewController
 }
 
-public extension Storyboarded {
-    
+extension Storyboarded {
+
     /// Returns current module Storyboard name based in calling file name.
     /// To be implemented in Routers
     static var storyboardName: String {
         let name = String(describing: self)
         return name.replacingOccurrences(of: "Router", with: "")
     }
-    
+
     static var storyboard: UIStoryboard {
         return UIStoryboard(name: storyboardName, bundle: Bundle(for: Self.self))
     }
-    
+
     static func viewControllerFromStoryboard() -> UIViewController {
         debugPrint("WARNING! This implementation of viewControllerFromStoryboard should never be called!")
         return UIViewController()

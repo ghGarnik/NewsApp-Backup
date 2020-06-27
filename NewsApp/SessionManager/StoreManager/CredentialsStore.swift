@@ -8,8 +8,8 @@
 
 import Foundation
 
-public protocol CredentialsStore {
-    func updateCredential(_ credential: Credential, completion: @escaping UpdateCredentialResponse)    
+protocol CredentialsStore {
+    func updateCredential(_ credential: Credential, completion: @escaping UpdateCredentialResponse)
     func retrieveCredential(_ credential: CredentialType, completion: @escaping RetrieveCredentialResponse<String>)
     func removeCredential(_ credential: CredentialType, completion: @escaping SimpleResponse)
 }

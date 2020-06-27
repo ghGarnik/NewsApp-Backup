@@ -11,7 +11,7 @@ import Foundation
 final class LoginViewModel {
     private let dependencies: LoginViewModelDependenciesProtocol
     private let router: LoginRouterProtocol
-    
+
     init(dependencies: LoginViewModelDependenciesProtocol,
          router: LoginRouterProtocol) {
         self.dependencies = dependencies
@@ -25,7 +25,7 @@ extension LoginViewModel: LoginViewModelProtocol {
         let credentials = LoginCredentials(username: username, password: password)
         dependencies.loginClient.login(credentials, completion: { [weak self] response in
             guard let self = self else { return }
-            
+
             switch response {
             case .successful:
                 self.router.loginDidSucceed()

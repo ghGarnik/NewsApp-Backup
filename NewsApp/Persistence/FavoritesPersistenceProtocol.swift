@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol FavoritesPersistenceProtocol {
+protocol FavoritesPersistenceProtocol {
     func saveFavorite(id: Int, completion: SimpleResponse)
     func removeFavorite(id: Int, completion: SimpleResponse)
     func isFavorite(id: Int, completion: TypedAction<Bool>)

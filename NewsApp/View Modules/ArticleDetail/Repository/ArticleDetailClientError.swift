@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ArticleDetailClientError {
+enum ArticleDetailClientError {
     case notLoggedIn
     case appError
 }

@@ -8,24 +8,24 @@
 
 import UIKit
 
-public class ArticleDetailRouter: Storyboarded {
-    
+final class ArticleDetailRouter: Storyboarded {
+
     private weak var view: ArticleDetailViewController!
     private weak var coordinator: Coordinator?
-    
+
     init(withView view: ArticleDetailViewController, coordinator: Coordinator) {
         self.view = view
         self.coordinator = coordinator
     }
-    
-    public static func assembleModule(coordinator: Coordinator, articleId: Int) -> UIViewController {
+
+    static func assembleModule(coordinator: Coordinator, articleId: Int) -> UIViewController {
         let viewController: ArticleDetailViewController = viewControllerFromStoryboard()
         let router = ArticleDetailRouter(withView: viewController, coordinator: coordinator)
         let viewModelDependencies = ArticleDetailViewModelDependencies()
         let viewModel = ArticleDetailViewModel(dependencies: viewModelDependencies,
                                                router: router,
                                                articleId: articleId)
-        
+
         viewController.viewModel = viewModel
         return viewController
     }
@@ -36,10 +36,10 @@ public class ArticleDetailRouter: Storyboarded {
 }
 
 extension ArticleDetailRouter: ArticleDetailRouterProtocol {
-    public func showMessage(_ message: String, completion: @escaping Action) {
+    func showMessage(_ message: String, completion: @escaping Action) {
         view.alert(message, completion: completion)
     }
-    public func logoutDidSucceed() {
+    func logoutDidSucceed() {
         coordinator?.logoutDidSucceed()
     }
 }

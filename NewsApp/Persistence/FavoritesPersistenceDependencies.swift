@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol FavoritesPersistenceDependenciesProtocol {
+protocol FavoritesPersistenceDependenciesProtocol {
     var userDefaults: UserDefaults { get }
     var bundle: Bundle { get }
 }

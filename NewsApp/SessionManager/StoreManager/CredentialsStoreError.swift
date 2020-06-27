@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum CredentialsStoreError {
+enum CredentialsStoreError {
     case reading
     case keyNotFound
     case writting

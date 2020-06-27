@@ -10,21 +10,21 @@ import Foundation
 
 
 /// To bind two different classes. In this app it is used to bind Views to ViewModels.
-public final class Observable<T> {
+final class Observable<T> {
     typealias Listener = (T) -> ()
-    
+
     private var listener: Listener?
-    
+
     var value: T {
         didSet {
             listener?(value)
         }
     }
-    
+
     init(_ value: T) {
         self.value = value
     }
-    
+
     func bind(_ completion: @escaping Listener) {
         completion(value)
         listener = completion

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum RetrieveSessionResult<Value> {
+enum RetrieveSessionResult<Value> {
     case success(Value)
     case failure(SessionManagerError)
 }
 
-public typealias RetrieveSessionResponse<Value> = (RetrieveSessionResult<Value>) -> ()
+typealias RetrieveSessionResponse<Value> = (RetrieveSessionResult<Value>) -> ()

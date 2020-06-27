@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Coordinator: class {
+protocol Coordinator: class {
     func start()
     func loginDidSucceed()
     func logoutDidSucceed()

@@ -9,15 +9,15 @@
 import Foundation
 
 final class ArticlesListRequest: APIRequest {
-    
+
     typealias Response = [CompactArticle]?
-    
+
     let path: Path
     var method: HTTPMethods { return .get }
     var headers: Headers { return nil }
     var encoding: HTTPEncoding { return .jsonEncoding }
     var auth: Bool { return true }
-    
+
     init(path: Path) {
         self.path = path
     }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol Reusable {
+protocol Reusable {
     static var reuseIdentifier: String { get }
 }
 

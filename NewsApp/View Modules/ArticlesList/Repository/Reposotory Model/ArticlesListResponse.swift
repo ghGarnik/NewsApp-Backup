@@ -8,4 +8,4 @@
 
 import Foundation
 
-public typealias ArticlesListResponse = [CompactArticle]
+typealias ArticlesListResponse = [CompactArticle]

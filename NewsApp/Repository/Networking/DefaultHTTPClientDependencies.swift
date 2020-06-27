@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol DefaultHTTPClientDependenciesProtocol {
+protocol DefaultHTTPClientDependenciesProtocol {
     var sessionManager: SessionManagerProtocol { get }
 }
 
-public final class DefaultHTTPClientDependencies: DefaultHTTPClientDependenciesProtocol {
-    public lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
+final class DefaultHTTPClientDependencies: DefaultHTTPClientDependenciesProtocol {
+    lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
 }
