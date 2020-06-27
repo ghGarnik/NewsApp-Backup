@@ -12,13 +12,12 @@ final class FavoritesPersistence {
     private let dependencies: FavoritesPersistenceDependenciesProtocol
     private let isFavoriteKey: String
 
-    private enum Constants {
-        static let isFavoritePath = ".isFavorite"
-    }
+    
+    static let isFavoritePath = ".isFavorite"
 
     init(dependencies: FavoritesPersistenceDependenciesProtocol) {
         self.dependencies = dependencies
-        self.isFavoriteKey = dependencies.bundle.description.appending(Constants.isFavoritePath)
+        self.isFavoriteKey = dependencies.bundle.description.appending(FavoritesPersistence.isFavoritePath)
     }
 }
 

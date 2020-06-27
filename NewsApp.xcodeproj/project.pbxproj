@@ -112,6 +112,8 @@
 		3EF0485124A5146300A4E2C8 /* ArticlesListClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0485024A5146300A4E2C8 /* ArticlesListClientError.swift */; };
 		3EF0485324A51CEB00A4E2C8 /* DefaultHTTPClientDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF0485224A51CEB00A4E2C8 /* DefaultHTTPClientDependencies.swift */; };
 		3EF2C35E249E7D6C000E6635 /* HTTPStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF2C35D249E7D6C000E6635 /* HTTPStatus.swift */; };
+		3EFD9BEC24A7B967002B04C5 /* FavoritesPersistenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD9BEB24A7B967002B04C5 /* FavoritesPersistenceTests.swift */; };
+		3EFD9BEE24A7BCF6002B04C5 /* MockFavoritesPersistenceDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EFD9BED24A7BCF6002B04C5 /* MockFavoritesPersistenceDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +235,8 @@
 		3EF0485024A5146300A4E2C8 /* ArticlesListClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesListClientError.swift; sourceTree = "<group>"; };
 		3EF0485224A51CEB00A4E2C8 /* DefaultHTTPClientDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultHTTPClientDependencies.swift; sourceTree = "<group>"; };
 		3EF2C35D249E7D6C000E6635 /* HTTPStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPStatus.swift; sourceTree = "<group>"; };
+		3EFD9BEB24A7B967002B04C5 /* FavoritesPersistenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesPersistenceTests.swift; sourceTree = "<group>"; };
+		3EFD9BED24A7BCF6002B04C5 /* MockFavoritesPersistenceDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavoritesPersistenceDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -695,6 +699,7 @@
 		3EB9EDEB249D3283008CB9FB /* NewsAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				3EFD9BEA24A7B89A002B04C5 /* Persistence */,
 				3EB9EDEC249D3283008CB9FB /* NewsAppTests.swift */,
 				3EB9EDEE249D3283008CB9FB /* Info.plist */,
 			);
@@ -751,6 +756,15 @@
 				3EB1A33724A1600A009A62BD /* SimpleResult.swift */,
 			);
 			path = Commons;
+			sourceTree = "<group>";
+		};
+		3EFD9BEA24A7B89A002B04C5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				3EFD9BEB24A7B967002B04C5 /* FavoritesPersistenceTests.swift */,
+				3EFD9BED24A7BCF6002B04C5 /* MockFavoritesPersistenceDependencies.swift */,
+			);
+			path = Persistence;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -968,6 +982,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3EB9EDED249D3283008CB9FB /* NewsAppTests.swift in Sources */,
+				3EFD9BEC24A7B967002B04C5 /* FavoritesPersistenceTests.swift in Sources */,
+				3EFD9BEE24A7BCF6002B04C5 /* MockFavoritesPersistenceDependencies.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
