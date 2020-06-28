@@ -12,7 +12,7 @@ final class FavoritesPersistence {
     private let dependencies: FavoritesPersistenceDependenciesProtocol
     private let isFavoriteKey: String
 
-    
+
     static let isFavoritePath = ".isFavorite"
 
     init(dependencies: FavoritesPersistenceDependenciesProtocol) {

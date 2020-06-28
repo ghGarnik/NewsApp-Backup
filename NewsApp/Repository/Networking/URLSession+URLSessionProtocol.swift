@@ -11,7 +11,7 @@ import Foundation
 typealias DataTaskResult = (Data?, URLResponse?, Error?) -> ()
 
 protocol URLSessionProtocol {
-    
+
     func dataTask(with request: URLRequest, completion: @escaping DataTaskResult) -> URLSessionDataTaskProtocol
 }
 

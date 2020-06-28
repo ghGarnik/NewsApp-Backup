@@ -82,7 +82,7 @@ final class DefaultHTTPClient: HTTPClient {
             completion(.failure(.networking(ErrorCaptions.invalidRequest.rawValue)))
             return
         }
-        
+
 
         let task = dependencies.urlSession.dataTask(with: urlRequest, completion: { [weak self] data, response, error in
             guard let self = self else { return }
