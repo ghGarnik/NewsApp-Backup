@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum NetworkingError: Error {
+enum NetworkingError: Error, Equatable {
     case networking(_: String)
     case forbidden
     case server

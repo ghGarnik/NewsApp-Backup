@@ -25,12 +25,10 @@ final class DefaultHTTPClient: HTTPClient {
     }
 
     private let dependencies: DefaultHTTPClientDependenciesProtocol
-    private var session: URLSession
-    private var activeRequest: URLSessionDataTask?
+    private var activeRequest: URLSessionDataTaskProtocol?
 
     init(dependencies: DefaultHTTPClientDependenciesProtocol) {
         self.dependencies = dependencies
-        session = URLSession.shared
     }
 
     //MARK: -  Execute Request
@@ -84,8 +82,9 @@ final class DefaultHTTPClient: HTTPClient {
             completion(.failure(.networking(ErrorCaptions.invalidRequest.rawValue)))
             return
         }
+        
 
-        let task = session.dataTask(with: urlRequest, completionHandler: { [weak self] data, response, error in
+        let task = dependencies.urlSession.dataTask(with: urlRequest, completion: { [weak self] data, response, error in
             guard let self = self else { return }
 
             //Error Management

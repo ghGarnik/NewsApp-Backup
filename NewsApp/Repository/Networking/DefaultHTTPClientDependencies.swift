@@ -10,8 +10,10 @@ import Foundation
 
 protocol DefaultHTTPClientDependenciesProtocol {
     var sessionManager: SessionManagerProtocol { get }
+    var urlSession: URLSessionProtocol { get }
 }
 
 final class DefaultHTTPClientDependencies: DefaultHTTPClientDependenciesProtocol {
     lazy var sessionManager: SessionManagerProtocol = DefaultSessionManager(dependencies: DefaultSessionManagerDependencies())
+    lazy var urlSession: URLSessionProtocol = URLSession.shared
 }
