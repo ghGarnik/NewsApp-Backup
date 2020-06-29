@@ -52,6 +52,7 @@
 		3E66747924A770DB00B95DC5 /* CacheManagerDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66747824A770DB00B95DC5 /* CacheManagerDependencies.swift */; };
 		3E66747B24A7710100B95DC5 /* CacheManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E66747A24A7710100B95DC5 /* CacheManagerProtocol.swift */; };
 		3E6F1C3224A6817700F765D0 /* ArticleDetailCopies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E6F1C3124A6817700F765D0 /* ArticleDetailCopies.swift */; };
+		3E7627E924A9B7BE00779C33 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3E7627E824A9B7BE00779C33 /* README.md */; };
 		3E7851FC24A6650900CBD850 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7851FB24A6650900CBD850 /* ArticleDetailViewController.swift */; };
 		3E7851FE24A6652000CBD850 /* ArticleDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E7851FD24A6652000CBD850 /* ArticleDetail.storyboard */; };
 		3E78520024A6657400CBD850 /* ArticleDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7851FF24A6657400CBD850 /* ArticleDetailViewModel.swift */; };
@@ -181,6 +182,7 @@
 		3E66747824A770DB00B95DC5 /* CacheManagerDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerDependencies.swift; sourceTree = "<group>"; };
 		3E66747A24A7710100B95DC5 /* CacheManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheManagerProtocol.swift; sourceTree = "<group>"; };
 		3E6F1C3124A6817700F765D0 /* ArticleDetailCopies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailCopies.swift; sourceTree = "<group>"; };
+		3E7627E824A9B7BE00779C33 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		3E7851FB24A6650900CBD850 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		3E7851FD24A6652000CBD850 /* ArticleDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ArticleDetail.storyboard; sourceTree = "<group>"; };
 		3E7851FF24A6657400CBD850 /* ArticleDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewModel.swift; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 				3EF2C361249E81CC000E6635 /* Commons */,
 				3EB9EDD2249D3281008CB9FB /* AppDelegate.swift */,
 				3EB9EDD4249D3281008CB9FB /* SceneDelegate.swift */,
+				3E7627E824A9B7BE00779C33 /* README.md */,
 				3EB9EDDE249D3282008CB9FB /* Assets.xcassets */,
 				3EB9EDE0249D3282008CB9FB /* LaunchScreen.storyboard */,
 				3EB9EDE3249D3282008CB9FB /* Info.plist */,
@@ -911,6 +914,7 @@
 				3E7851FE24A6652000CBD850 /* ArticleDetail.storyboard in Resources */,
 				3EB9EDDF249D3282008CB9FB /* Assets.xcassets in Resources */,
 				3ECBC9EE24A5FA3900E1D76C /* ArticleCell.xib in Resources */,
+				3E7627E924A9B7BE00779C33 /* README.md in Resources */,
 				3E14DDD224A3B94F00226E5F /* ArticlesList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
